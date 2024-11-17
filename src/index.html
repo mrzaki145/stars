@@ -1,0 +1,1554 @@
+<!doctype html>
+<html lang="en" dir="lrt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <title>Stars</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./assets/styles/styles.css" />
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/preline@2.0.2/dist/preline.min.js"
+    ></script>
+    <script defer src="./assets/scripts/main.js"></script>
+
+    <script defer src="./assets/scripts/index.js"></script>
+  </head>
+
+  <body>
+    <div
+      id="preloader"
+      class="fixed inset-0 isolate z-50 flex h-full w-full items-center justify-center bg-zinc-800"
+    >
+      <img
+        src="./assets/images/icons/sparkle-outline.png"
+        class="star star-outline absolute z-20 m-auto h-56 opacity-0 rotate-45 scale-0 sm:h-3/5"
+        alt=""
+      />
+      <img
+        src="./assets/images/icons/sparkle.png"
+        class="star star-solid absolute z-20 m-auto h-56 opacity-0 rotate-45 scale-0 sm:h-3/5"
+        alt=""
+      />
+
+      <div
+        class="bg-overlay absolute inset-0 z-10 m-auto aspect-square w-full rounded-full bg-zinc-900 scale-0"
+      ></div>
+    </div>
+    <!-- /preloader -->
+
+    <div id="menu" class="menu" data-lenis-prevent>
+      <div class="navbar wrapper">
+        <img src="./assets/images/logo.png" class="navbar__logo" alt="" />
+
+        <button
+          type="button"
+          class="navbar__btn"
+          aria-label="open menu"
+          onclick="closeMenu()"
+        >
+          <img
+            class="mx-auto w-12"
+            src="./assets/images/icons/men-x.svg"
+            alt=""
+          />
+        </button>
+      </div>
+
+      <nav class="menu__nav wrapper">
+        <ul class="menu__nav-list">
+          <li>
+            <a href="./index.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="./about.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">About</span>
+            </a>
+          </li>
+          <li>
+            <a href="./services.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">Services</span>
+            </a>
+          </li>
+          <li>
+            <a href="./customers.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">Customers</span>
+            </a>
+          </li>
+          <li>
+            <a href="./team.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">Team</span>
+            </a>
+          </li>
+          <li>
+            <a href="./contact.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">Contact</span>
+            </a>
+          </li>
+          <li>
+            <a href="./faq.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">FAQs</span>
+            </a>
+          </li>
+          <li>
+            <a href="./faq.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text ltr:font-bahij rtl:font-sans"
+                >FAQs</span
+              >
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- /menu -->
+
+    <div id="app">
+      <header>
+        <div class="navbar wrapper">
+          <img src="./assets/images/logo.png" class="navbar__logo" alt="" />
+
+          <button
+            id="navBarBtn"
+            type="button"
+            class="navbar__btn"
+            aria-label="open menu"
+            onclick="openMenu()"
+          >
+            <img
+              class="navbar__btn-icon"
+              src="./assets/images/icons/menu.svg"
+              alt=""
+            />
+            <img
+              id="navBarBtnSparkle"
+              src="./assets/images/icons/sparkle.png"
+              class="navbar__btn-sparkle"
+              alt=""
+            />
+          </button>
+        </div>
+
+        <div id="hero" class="wrapper max-w-[1400px]">
+          <div class="grid gap-14 sm:grid-cols-7">
+            <div
+              class="hero-img-1 relative z-10 col-span-2 origin-left max-sm:hidden"
+            >
+              <img
+                src="./assets/images/hero/hero-1.png"
+                class="h-full w-full rounded-3xl object-cover object-center ltr:rounded-br-none rtl:rounded-bl-none"
+                alt=""
+              />
+            </div>
+
+            <div
+              class="hero-text flex flex-col items-center justify-center text-center max-sm:py-10 sm:col-span-3"
+            >
+              <p
+                class="mb-7 text-center font-bold capitalize leading-7 text-gray-400 sm:text-xl"
+              >
+                Rent
+                <span class="mx-1 text-xs leading-none">&#x2022;</span>
+                Selling
+                <span class="mx-1 text-xs leading-none">&#x2022;</span>
+                Maintenance and repair
+              </p>
+
+              <h1
+                class="mb-7 text-3xl font-semibold text-stone-900 sm:text-[46px] sm:leading-[57px]"
+              >
+                A company specialized in providing forklift rental services, as
+                well as manual.
+              </h1>
+
+              <div
+                class="mb-12 flex flex-col items-center gap-2 sm:flex-row sm:justify-center sm:gap-6"
+              >
+                <div class="flex items-center">
+                  <svg
+                    class="me-2 inline-block h-6 w-6 fill-current text-red-600"
+                  >
+                    <use href="./assets/images/icons/sprite.svg#check"></use>
+                  </svg>
+                  <span class="text-lg leading-loose text-red-600 sm:text-xl"
+                    >Repair and Installation</span
+                  >
+                </div>
+
+                <div class="flex items-center">
+                  <svg
+                    class="me-2 inline-block h-6 w-6 fill-current text-red-600"
+                  >
+                    <use href="./assets/images/icons/sprite.svg#check"></use>
+                  </svg>
+                  <span class="text-lg leading-loose text-red-600 sm:text-xl"
+                    >Forklift
+                  </span>
+                </div>
+              </div>
+
+              <div class="mb-12 text-center sm:mb-24">
+                <a
+                  href="#"
+                  class="group inline-flex items-center justify-center rounded-full border border-stone-900 bg-stone-900 p-2 transition-colors duration-300 hover:bg-transparent"
+                >
+                  <span
+                    class="px-4 py-1 text-lg font-bold text-white transition-colors duration-300 group-hover:text-stone-900"
+                    >Call Us Now</span
+                  >
+                  <span
+                    class="flex h-11 w-11 items-center justify-center rounded-full bg-white transition-colors duration-300 group-hover:bg-stone-900"
+                  >
+                    <svg
+                      class="text-stone9bg-stone-900 h-6 w-6 fill-current transition-colors duration-300 group-hover:text-white"
+                    >
+                      <use href="./assets/images/icons/sprite.svg#phone"></use>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+
+              <div
+                class="flex flex-row justify-center gap-4 sm:flex-row sm:gap-14"
+              >
+                <div
+                  class="flex flex-1 flex-col gap-2 border-s border-black ps-3 sm:flex-row sm:items-center"
+                >
+                  <span
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-black"
+                  >
+                    <img src="./assets/images/icons/calendar.svg" alt="" />
+                  </span>
+
+                  <span
+                    class="text-nowrap text-start text-sm font-semibold text-stone-900"
+                    >Flexible <br />
+                    Appointments</span
+                  >
+                </div>
+                <div
+                  class="flex flex-1 flex-col gap-2 border-s border-black ps-3 sm:flex-row sm:items-center"
+                >
+                  <span
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-black"
+                  >
+                    <img src="./assets/images/icons/clock.svg" alt="" />
+                  </span>
+
+                  <span
+                    class="text-nowrap text-start text-sm font-semibold text-stone-900"
+                    >24H <br />
+                    Availability</span
+                  >
+                </div>
+                <div
+                  class="flex flex-1 flex-col gap-2 border-s border-black ps-3 sm:flex-row sm:items-center"
+                >
+                  <span
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-black"
+                  >
+                    <img src="./assets/images/icons/map-pin.svg" alt="" />
+                  </span>
+
+                  <span
+                    class="text-nowrap text-start text-sm font-semibold text-stone-900"
+                    >Local<br />
+                    Professional</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="hero-img-2 relative z-10 col-span-2 origin-right max-sm:hidden"
+            >
+              <img
+                src="./assets/images/hero/hero-2.png"
+                class="hero-img h-full w-full rounded-3xl object-cover object-center ltr:rounded-bl-none rtl:rounded-br-none"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- /header -->
+
+      <main class="space-y-20 py-16 sm:space-y-40 sm:py-48">
+        <section id="clients" class="section">
+          <div class="title mx-auto mb-8 w-fit sm:mb-12">
+            <h2 class="text-2xl font-medium uppercase leading-10 text-red-600">
+              Our pARTNERS
+            </h2>
+            <span class="inline-block h-0.5 w-14 bg-red-600"></span>
+          </div>
+
+          <ul
+            class="flex flex-wrap items-center justify-center gap-10 sm:gap-24"
+          >
+            <li>
+              <img
+                src="./assets/images/clients/saleheya-b.png"
+                class="h-10 sm:h-16"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                src="./assets/images/clients/orient.png"
+                class="h-10 sm:h-16"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                src="./assets/images/clients/AlMunajem.png"
+                class="h-10 sm:h-16"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                src="./assets/images/clients/smsa.png"
+                class="h-10 sm:h-16"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                src="./assets/images/clients/saco.png"
+                class="h-10 sm:h-16"
+                alt=""
+              />
+            </li>
+          </ul>
+        </section>
+        <!-- /clients -->
+
+        <section id="about" class="section isolate">
+          <div class="grid items-center gap-7 sm:grid-cols-2">
+            <article class="max-sm:order-2">
+              <div class="about-title mb-4 sm:mb-6">
+                <h2
+                  class="text-2xl font-medium uppercase leading-10 text-red-600"
+                >
+                  Our company
+                </h2>
+                <span class="mt-2 inline-block h-0.5 w-14 bg-red-600"></span>
+              </div>
+
+              <p class="about-desc mb-8 leading-7 text-slate-600 sm:mb-12">
+                Our company specializes in comprehensive forklift and material
+                handling solutions, offering rental contracts with flexible
+                terms and diverse equipment options. Our maintenance and repair
+                services ensure reliable forklift performance, including fault
+                inspection, preventive measures, and efficient repairs.
+              </p>
+
+              <ul class="flex flex-wrap gap-y-3 sm:gap-y-8">
+                <li
+                  class="about-feature flex basis-full items-center gap-3 sm:basis-1/2"
+                >
+                  <svg class="h-4 w-4">
+                    <use href="./assets/images/icons/sprite.svg#check"></use>
+                  </svg>
+
+                  <span
+                    class="text-lg font-bold leading-7 text-zinc-800 sm:text-xl"
+                    >Repair and Installation</span
+                  >
+                </li>
+                <li
+                  class="about-feature flex basis-full items-center gap-3 sm:basis-1/2"
+                >
+                  <svg class="h-4 w-4 fill-current text-stone-900">
+                    <use href="./assets/images/icons/sprite.svg#check"></use>
+                  </svg>
+
+                  <span
+                    class="text-lg font-bold leading-7 text-zinc-800 sm:text-xl"
+                    >Forklift</span
+                  >
+                </li>
+                <li
+                  class="about-feature flex basis-full items-center gap-3 sm:basis-1/2"
+                >
+                  <svg class="h-4 w-4 fill-current text-stone-900">
+                    <use href="./assets/images/icons/sprite.svg#check"></use>
+                  </svg>
+
+                  <span
+                    class="text-lg font-bold leading-7 text-zinc-800 sm:text-xl"
+                    >Maintenance</span
+                  >
+                </li>
+                <li
+                  class="about-feature flex basis-full items-center gap-3 sm:basis-1/2"
+                >
+                  <svg class="h-4 w-4 fill-current text-stone-900">
+                    <use href="./assets/images/icons/sprite.svg#check"></use>
+                  </svg>
+
+                  <span
+                    class="text-lg font-bold leading-7 text-zinc-800 sm:text-xl"
+                    >Restoration services</span
+                  >
+                </li>
+                <li
+                  class="about-feature flex basis-full items-center gap-3 sm:basis-1/2"
+                >
+                  <svg class="h-4 w-4 fill-current text-stone-900">
+                    <use href="./assets/images/icons/sprite.svg#check"></use>
+                  </svg>
+
+                  <span
+                    class="text-lg font-bold leading-7 text-zinc-800 sm:text-xl"
+                    >Spare parts</span
+                  >
+                </li>
+                <li
+                  class="about-feature flex basis-full items-center gap-3 sm:basis-1/2"
+                >
+                  <svg class="h-4 w-4 fill-current text-stone-900">
+                    <use href="./assets/images/icons/sprite.svg#check"></use>
+                  </svg>
+
+                  <span
+                    class="text-lg font-bold leading-7 text-zinc-800 sm:text-xl"
+                    >Programming</span
+                  >
+                </li>
+              </ul>
+            </article>
+
+            <div class="relative max-sm:order-1">
+              <img
+                src="./assets/images/home-about.png"
+                class="about-img w-full"
+                alt=""
+              />
+            </div>
+          </div>
+        </section>
+        <!-- /about -->
+
+        <section id="features" class="container max-sm:px-0">
+          <div
+            class="sm:before:clippy-end sm:after:clippy-start relative bg-gray-100 px-6 py-16 sm:rounded-3xl sm:px-36 sm:py-28 sm:before:absolute sm:before:-start-px sm:before:bottom-[5rem] sm:before:top-[5rem] sm:before:w-8 sm:before:bg-white sm:after:absolute sm:after:-end-px sm:after:bottom-[5rem] sm:after:top-[5rem] sm:after:w-8 sm:after:bg-white"
+          >
+            <header class="mb-10 sm:mb-16">
+              <div class="features-title mx-auto mb-4 w-fit sm:mb-6">
+                <h2
+                  class="text-2xl font-medium uppercase leading-10 text-red-600 sm:text-3xl"
+                >
+                  Why Choose Us?
+                </h2>
+                <span class="inline-block h-px w-14 bg-red-600"></span>
+              </div>
+            </header>
+
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div
+                class="features-item rounded-2xl bg-gray-200 p-6 text-black transition-colors hover:bg-zinc-900 hover:text-white sm:p-10"
+              >
+                <img
+                  class="mb-4 w-16 -translate-x-3"
+                  src="./assets/images/icons/feature-1.png"
+                  alt=""
+                />
+
+                <div>
+                  <h3 class="mb-2 text-lg font-bold">Satisfaction Guarantee</h3>
+
+                  <p>
+                    you don't need to worry about scams or our performance
+                    results. our company has been verified and strives for
+                    optimal results
+                  </p>
+                </div>
+              </div>
+              <div
+                class="features-item rounded-2xl bg-gray-200 p-6 text-black transition-colors hover:bg-zinc-900 hover:text-white sm:p-10"
+              >
+                <img
+                  class="mb-4 w-16 -translate-x-3"
+                  src="./assets/images/icons/feature-2.png"
+                  alt=""
+                />
+
+                <div>
+                  <h3 class="mb-2 text-lg font-bold">Free Quotes</h3>
+
+                  <p>
+                    Get personalized cost estimates without any obligation.
+                    Experience transparency and peace of mind as you explore our
+                    service.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="features-item rounded-2xl bg-gray-200 p-6 text-black transition-colors hover:bg-zinc-900 hover:text-white sm:p-10"
+              >
+                <img
+                  class="mb-4 w-16 -translate-x-3"
+                  src="./assets/images/icons/feature-3.png"
+                  alt=""
+                />
+
+                <div>
+                  <h3 class="mb-2 text-lg font-bold">Local Professionals</h3>
+
+                  <p>
+                    Our services cover the Nationwide, US area, including urban,
+                    suburban, and rural locations for both long and short term
+                    maintenance
+                  </p>
+                </div>
+              </div>
+              <div
+                class="features-item rounded-2xl bg-gray-200 p-6 text-black transition-colors hover:bg-zinc-900 hover:text-white sm:p-10"
+              >
+                <img
+                  class="mb-4 w-16 -translate-x-3"
+                  src="./assets/images/icons/feature-4.png"
+                  alt=""
+                />
+
+                <div>
+                  <h3 class="mb-2 text-lg font-bold">Fast 24-Hour Service</h3>
+
+                  <p>
+                    need fast handling for repairs to drains, leaks or something
+                    else? Our experts are available anytime to help you solve
+                    the problem
+                  </p>
+                </div>
+              </div>
+              <div
+                class="features-item rounded-2xl bg-gray-200 p-6 text-black transition-colors hover:bg-zinc-900 hover:text-white sm:p-10"
+              >
+                <img
+                  class="mb-4 w-16 -translate-x-3"
+                  src="./assets/images/icons/feature-5.png"
+                  alt=""
+                />
+
+                <div>
+                  <h3 class="mb-2 text-lg font-bold">Flexible Appointments</h3>
+
+                  <p>
+                    You are free to ask us about the problems you are facing. We
+                    offer a no-commitment approach to put your mind at ease
+                  </p>
+                </div>
+              </div>
+              <div
+                class="features-item rounded-2xl bg-gray-200 p-6 text-black transition-colors hover:bg-zinc-900 hover:text-white sm:p-10"
+              >
+                <img
+                  class="mb-4 w-16 -translate-x-3"
+                  src="./assets/images/icons/feature-6.png"
+                  alt=""
+                />
+
+                <div>
+                  <h3 class="mb-2 text-lg font-bold">100% Commitment-Free</h3>
+
+                  <p>
+                    Get personalized cost estimates without any obligation.
+                    Experience transparency and peace of mind as you explore our
+                    service.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- /features -->
+
+        <section id="services" class="section">
+          <header class="services-title mb-7 sm:mb-12">
+            <h2 class="text-2xl font-medium uppercase leading-10 text-red-600">
+              Our Services
+            </h2>
+            <span class="mt-2 inline-block h-0.5 w-14 bg-red-600"></span>
+          </header>
+
+          <div class="services-swiper">
+            <div
+              class="sm:before:clippy-end sm:after:clippy-start relative sm:before:absolute sm:before:-start-px sm:before:bottom-[2.5rem] sm:before:top-[2.5rem] sm:before:z-30 sm:before:w-6 sm:before:bg-white sm:after:absolute sm:after:-end-px sm:after:bottom-[2.5rem] sm:after:top-[2.5rem] sm:after:z-30 sm:after:w-6 sm:after:bg-white"
+            >
+              <div class="swiper mb-12 rounded-3xl sm:mb-16">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide group">
+                    <div class="relative overflow-hidden rounded-3xl">
+                      <div
+                        class="relative z-20 flex h-full min-h-[366px] flex-col items-start justify-between bg-gradient-to-t from-stone-950 to-transparent p-8"
+                      >
+                        <a
+                          href="#"
+                          class="inline-flex h-12 w-12 items-center justify-center self-end rounded-full bg-white transition-opacity sm:opacity-0 sm:group-[.swiper-slide-active]:opacity-100 sm:group-[.swiper-slide-next]:opacity-100"
+                        >
+                          <svg
+                            class="h-6 w-6 fill-current stroke-2 text-red-600"
+                          >
+                            <use
+                              href="./assets/images/icons/sprite.svg#arrow-right-sm"
+                            ></use>
+                          </svg>
+                        </a>
+
+                        <div
+                          class="transition-all sm:opacity-50 sm:group-[.swiper-slide-active]:opacity-100 sm:group-[.swiper-slide-next]:opacity-100 sm:group-[.swiper-slide-active]:translate-x-6"
+                        >
+                          <h2
+                            class="mb-3 text-lg font-bold leading-loose text-white"
+                          >
+                            Forklift and MHE rental contracts
+                          </h2>
+                          <p class="leading-[25px] text-white">
+                            We offer a diverse range of well-maintained
+                            forklifts through flexible rental contracts,
+                            tailored to streamline operations and boost
+                            productivity.
+                          </p>
+                        </div>
+                      </div>
+
+                      <img
+                        src="./assets/images/service.png"
+                        class="absolute inset-0 z-10 h-full w-full rounded-3xl object-cover object-center"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="swiper-slide group">
+                    <div class="relative overflow-hidden rounded-3xl">
+                      <div
+                        class="relative z-20 flex h-full min-h-[366px] flex-col items-start justify-between bg-gradient-to-t from-stone-950 to-transparent p-8"
+                      >
+                        <a
+                          href="#"
+                          class="inline-flex h-12 w-12 items-center justify-center self-end rounded-full bg-white transition-opacity sm:opacity-0 sm:group-[.swiper-slide-active]:opacity-100 sm:group-[.swiper-slide-next]:opacity-100"
+                        >
+                          <svg
+                            class="h-6 w-6 fill-current stroke-2 text-red-600"
+                          >
+                            <use
+                              href="./assets/images/icons/sprite.svg#arrow-right-sm"
+                            ></use>
+                          </svg>
+                        </a>
+
+                        <div
+                          class="transition-all sm:opacity-50 sm:group-[.swiper-slide-active]:opacity-100 sm:group-[.swiper-slide-next]:opacity-100 sm:group-[.swiper-slide-active]:translate-x-6"
+                        >
+                          <h2
+                            class="mb-3 text-lg font-bold leading-loose text-white"
+                          >
+                            Forklift and MHE rental contracts
+                          </h2>
+                          <p class="leading-[25px] text-white">
+                            We offer a diverse range of well-maintained
+                            forklifts through flexible rental contracts,
+                            tailored to streamline operations and boost
+                            productivity.
+                          </p>
+                        </div>
+                      </div>
+
+                      <img
+                        src="./assets/images/service.png"
+                        class="absolute inset-0 z-10 h-full w-full rounded-3xl object-cover object-center"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="swiper-slide group">
+                    <div class="relative overflow-hidden rounded-3xl">
+                      <div
+                        class="relative z-20 flex h-full min-h-[366px] flex-col items-start justify-between bg-gradient-to-t from-stone-950 to-transparent p-8"
+                      >
+                        <a
+                          href="#"
+                          class="inline-flex h-12 w-12 items-center justify-center self-end rounded-full bg-white transition-opacity sm:opacity-0 sm:group-[.swiper-slide-active]:opacity-100 sm:group-[.swiper-slide-next]:opacity-100"
+                        >
+                          <svg
+                            class="h-6 w-6 fill-current stroke-2 text-red-600"
+                          >
+                            <use
+                              href="./assets/images/icons/sprite.svg#arrow-right-sm"
+                            ></use>
+                          </svg>
+                        </a>
+
+                        <div
+                          class="transition-all sm:opacity-50 sm:group-[.swiper-slide-active]:opacity-100 sm:group-[.swiper-slide-next]:opacity-100 sm:group-[.swiper-slide-active]:translate-x-6"
+                        >
+                          <h2
+                            class="mb-3 text-lg font-bold leading-loose text-white"
+                          >
+                            Forklift and MHE rental contracts
+                          </h2>
+                          <p class="leading-[25px] text-white">
+                            We offer a diverse range of well-maintained
+                            forklifts through flexible rental contracts,
+                            tailored to streamline operations and boost
+                            productivity.
+                          </p>
+                        </div>
+                      </div>
+
+                      <img
+                        src="./assets/images/service.png"
+                        class="absolute inset-0 z-10 h-full w-full rounded-3xl object-cover object-center"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="swiper-slide group">
+                    <div class="relative overflow-hidden rounded-3xl">
+                      <div
+                        class="relative z-20 flex h-full min-h-[366px] flex-col items-start justify-between bg-gradient-to-t from-stone-950 to-transparent p-8"
+                      >
+                        <a
+                          href="#"
+                          class="inline-flex h-12 w-12 items-center justify-center self-end rounded-full bg-white transition-opacity sm:opacity-0 sm:group-[.swiper-slide-active]:opacity-100 sm:group-[.swiper-slide-next]:opacity-100"
+                        >
+                          <svg
+                            class="h-6 w-6 fill-current stroke-2 text-red-600"
+                          >
+                            <use
+                              href="./assets/images/icons/sprite.svg#arrow-right-sm"
+                            ></use>
+                          </svg>
+                        </a>
+
+                        <div
+                          class="transition-all sm:opacity-50 sm:group-[.swiper-slide-active]:opacity-100 sm:group-[.swiper-slide-next]:opacity-100 sm:group-[.swiper-slide-active]:translate-x-6"
+                        >
+                          <h2
+                            class="mb-3 text-lg font-bold leading-loose text-white"
+                          >
+                            Forklift and MHE rental contracts
+                          </h2>
+                          <p class="leading-[25px] text-white">
+                            We offer a diverse range of well-maintained
+                            forklifts through flexible rental contracts,
+                            tailored to streamline operations and boost
+                            productivity.
+                          </p>
+                        </div>
+                      </div>
+
+                      <img
+                        src="./assets/images/service.png"
+                        class="absolute inset-0 z-10 h-full w-full rounded-3xl object-cover object-center"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bottom-0 z-40 flex w-full items-center justify-between translate-y-full max-lg:mt-8 lg:absolute lg:top-1/2 lg:-translate-y-1/2"
+              >
+                <div
+                  class="swiper-button-prev lg:-translate-x-full lg:rtl:translate-x-full"
+                >
+                  <svg class="h-6 w-6 fill-current text-white">
+                    <use
+                      href="./assets/images/icons/sprite.svg#arrow-left"
+                    ></use>
+                  </svg>
+                </div>
+                <div
+                  class="swiper-button-next lg:translate-x-full lg:rtl:-translate-x-full"
+                >
+                  <svg class="h-6 w-6 fill-current text-white">
+                    <use
+                      href="./assets/images/icons/sprite.svg#arrow-right"
+                    ></use>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- /services -->
+
+        <section id="team">
+          <header class="services-title mx-auto mb-7 w-fit sm:mb-12">
+            <h2
+              class="text-2xl font-medium uppercase leading-10 text-red-600 sm:text-3xl"
+            >
+              our TEAM
+            </h2>
+            <span class="mt-2 inline-block h-0.5 w-14 bg-red-600"></span>
+          </header>
+
+          <div
+            class="parallax-wrapper relative flex h-[685px] items-center justify-center overflow-hidden"
+          >
+            <img
+              src="./assets/images/home-team.jpg"
+              class="parallax-img h-full w-full object-cover object-center"
+              alt=""
+            />
+
+            <a
+              href="./team.html"
+              class="team-btn absolute z-20 m-auto rounded-[40px] bg-stone-900 bg-opacity-80 px-16 py-6 text-2xl font-semibold text-white backdrop-blur-[18px]"
+              >Our Expert Team</a
+            >
+          </div>
+        </section>
+        <!-- /team -->
+
+        <section id="reviews" class="section relative">
+          <div class="mx-auto mb-8 w-fit max-w-lg sm:mb-12">
+            <h2 class="text-2xl font-medium uppercase text-red-600 sm:text-4xl">
+              What our customers say
+            </h2>
+            <span class="mt-2 inline-block h-px w-14 bg-red-600"></span>
+          </div>
+
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <p
+                  class="mx-auto mb-10 max-w-4xl text-center text-lg leading-loose text-slate-600 sm:text-xl"
+                  data-swiper-parallax="-300"
+                >
+                  I have been using the services of this company for over a year
+                  now, and I must say they have exceeded my expectations. Their
+                  forklift rental service is reliable, and the equipment is
+                  always in excellent condition. The team is knowledgeable and
+                  responsive, addressing any concerns or inquiries promptly. I
+                  highly recommend their services.
+                </p>
+
+                <div
+                  class="flex items-center justify-center"
+                  data-swiper-parallax="-250"
+                >
+                  <div class="flex items-center gap-6">
+                    <div>
+                      <p
+                        class="text-xl font-bold leading-none text-zinc-900 sm:text-2xl"
+                      >
+                        Sarah Mashaal
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <p
+                  class="mx-auto mb-10 max-w-4xl text-center text-lg leading-loose text-slate-600 sm:text-xl"
+                  data-swiper-parallax="-300"
+                >
+                  As an expatriate living in the region, I rely on this company
+                  for all my material handling needs. Their range of forklifts
+                  is impressive, and the quality of service is outstanding. The
+                  technicians are skilled and efficient, ensuring minimal
+                  downtime for my operations. I appreciate their professionalism
+                  and attention to detail.
+                </p>
+
+                <div
+                  class="flex items-center justify-center"
+                  data-swiper-parallax="-250"
+                >
+                  <div class="flex items-center gap-6">
+                    <div>
+                      <p
+                        class="text-xl font-bold leading-none text-zinc-900 sm:text-2xl"
+                      >
+                        John Berry
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <p
+                  class="mx-auto mb-10 max-w-4xl text-center text-lg leading-loose text-slate-600 sm:text-xl"
+                  data-swiper-parallax="-300"
+                >
+                  I have been using the forklift maintenance and repair services
+                  of this company for my warehouse, and I am thoroughly
+                  satisfied. The technicians are experienced and thorough in
+                  their work. They have helped me optimize the performance of my
+                  forklifts, reducing maintenance costs and increasing
+                  productivity. I would definitely recommend them.
+                </p>
+
+                <div
+                  class="flex items-center justify-center"
+                  data-swiper-parallax="-250"
+                >
+                  <div class="flex items-center gap-6">
+                    <div>
+                      <p
+                        class="text-xl font-bold leading-none text-zinc-900 sm:text-2xl"
+                      >
+                        Mia Smith
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <p
+                  class="mx-auto mb-10 max-w-4xl text-center text-lg leading-loose text-slate-600 sm:text-xl"
+                  data-swiper-parallax="-300"
+                >
+                  The range of forklifts they offer is diverse, and they always
+                  provide tailored solutions to meet my specific requirements.
+                  Their after-sales support is excellent, and I value their
+                  expertise.
+                </p>
+
+                <div
+                  class="flex items-center justify-center"
+                  data-swiper-parallax="-250"
+                >
+                  <div class="flex items-center gap-6">
+                    <div>
+                      <p
+                        class="text-xl font-bold leading-none text-zinc-900 sm:text-2xl"
+                      >
+                        Peter Johnson
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <p
+                  class="mx-auto mb-10 max-w-4xl text-center text-lg leading-loose text-slate-600 sm:text-xl"
+                  data-swiper-parallax="-300"
+                >
+                  Being in the logistics industry, I need reliable forklift
+                  services, and this company has been my go-to choice. They
+                  offer a wide range of forklifts suitable for various
+                  applications. The team is professional, and their
+                  communication is excellent. They understand the unique
+                  challenges of my business and provide solutions that enhance
+                  efficiency. I highly recommend them.
+                </p>
+
+                <div
+                  class="flex items-center justify-center"
+                  data-swiper-parallax="-250"
+                >
+                  <div class="flex items-center gap-6">
+                    <div>
+                      <p
+                        class="text-xl font-bold leading-none text-zinc-900 sm:text-2xl"
+                      >
+                        Mohammed Alquraishi
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-pagination relative mt-16"></div>
+          </div>
+
+          <div class="swiper-button-prev">
+            <svg class="h-6 w-6 fill-current text-white">
+              <use href="./assets/images/icons/sprite.svg#arrow-left"></use>
+            </svg>
+          </div>
+          <div class="swiper-button-next">
+            <svg class="h-6 w-6 fill-current text-white">
+              <use href="./assets/images/icons/sprite.svg#arrow-right"></use>
+            </svg>
+          </div>
+        </section>
+        <!-- /reviews -->
+
+        <section id="contact" class="wrapper">
+          <header class="services-title mx-auto mb-7 w-fit sm:mb-12">
+            <h2
+              class="text-2xl font-medium uppercase leading-10 text-red-600 sm:text-3xl"
+            >
+              CONTACT US
+            </h2>
+            <span class="mt-2 inline-block h-0.5 w-14 bg-red-600"></span>
+          </header>
+
+          <div class="flex flex-col items-center max-md:gap-10 sm:flex-row">
+            <div
+              class="contact-info w-full rounded-[30px] bg-neutral-100 p-6 max-sm:order-2 sm:min-h-[740px] sm:w-2/5 sm:py-24"
+            >
+              <div class="content">
+                <div class="hs-accordion-group mb-12 space-y-6">
+                  <div class="hs-accordion active" id="hs-accordion-1">
+                    <button
+                      class="hs-accordion-toggle inline-flex w-full items-center gap-x-3 rounded-lg bg-white bg-opacity-80 px-7 py-5 text-start text-sm font-semibold text-black disabled:pointer-events-none disabled:opacity-50"
+                      aria-controls="hs-collapse-1"
+                    >
+                      <span class="flex flex-1 items-center gap-4">
+                        <img
+                          src="./assets/images/contact/location.svg"
+                          class="w-5"
+                          alt=""
+                        />
+                        Location
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 transition-transform hs-accordion-active:rotate-180"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="m6 9 6 6 6-6" />
+                      </svg>
+                    </button>
+                    <div
+                      id="hs-collapse-1"
+                      class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300"
+                      aria-labelledby="hs-accordion-1"
+                    >
+                      <div class="space-y-5 px-8 pt-6 sm:px-16">
+                        <p class="flex items-center gap-2 text-sm text-black">
+                          <img src="./assets/images/contact/spark.svg" alt="" />
+                          General cases: Sunday to Thursday, 8:00 AM to 5:00 PM
+                        </p>
+                        <p class="flex items-center gap-2 text-sm text-black">
+                          <img src="./assets/images/contact/spark.svg" alt="" />
+                          Emergency cases: 24 hours a day, 7 days a week
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hs-accordion" id="hs-accordion-2">
+                    <button
+                      class="hs-accordion-toggle inline-flex w-full items-center gap-x-3 rounded-lg bg-white bg-opacity-80 px-7 py-5 text-start text-sm font-semibold text-black disabled:pointer-events-none disabled:opacity-50"
+                      aria-controls="hs-collapse-2"
+                    >
+                      <span class="flex flex-1 items-center gap-4">
+                        <img
+                          src="./assets/images/contact/email.svg"
+                          class="w-5"
+                          alt=""
+                        />
+                        Email
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 transition-transform hs-accordion-active:rotate-180"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="m6 9 6 6 6-6" />
+                      </svg>
+                    </button>
+                    <div
+                      id="hs-collapse-2"
+                      class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                      aria-labelledby="hs-accordion-2"
+                    >
+                      <div class="space-y-5 px-8 pt-6 sm:px-16">
+                        <p class="flex items-center gap-2 text-sm text-black">
+                          <img src="./assets/images/contact/spark.svg" alt="" />
+                          General cases: Sunday to Thursday, 8:00 AM to 5:00 PM
+                        </p>
+                        <p class="flex items-center gap-2 text-sm text-black">
+                          <img src="./assets/images/contact/spark.svg" alt="" />
+                          Emergency cases: 24 hours a day, 7 days a week
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hs-accordion" id="hs-accordion-3">
+                    <button
+                      class="hs-accordion-toggle inline-flex w-full items-center gap-x-3 rounded-lg bg-white bg-opacity-80 px-7 py-5 text-start text-sm font-semibold text-black disabled:pointer-events-none disabled:opacity-50"
+                      aria-controls="hs-collapse-3"
+                    >
+                      <span class="flex flex-1 items-center gap-4">
+                        <img
+                          src="./assets/images/contact/phone.svg"
+                          class="w-5"
+                          alt=""
+                        />
+                        Phone
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 transition-transform hs-accordion-active:rotate-180"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="m6 9 6 6 6-6" />
+                      </svg>
+                    </button>
+                    <div
+                      id="hs-collapse-3"
+                      class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                      aria-labelledby="hs-accordion-3"
+                    >
+                      <div class="space-y-5 px-8 pt-6 sm:px-16">
+                        <p class="flex items-center gap-2 text-sm text-black">
+                          <img src="./assets/images/contact/spark.svg" alt="" />
+                          General cases: Sunday to Thursday, 8:00 AM to 5:00 PM
+                        </p>
+                        <p class="flex items-center gap-2 text-sm text-black">
+                          <img src="./assets/images/contact/spark.svg" alt="" />
+                          Emergency cases: 24 hours a day, 7 days a week
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <ul class="flex gap-3">
+                  <li>
+                    <a href="#"
+                      ><svg class="h-6 w-6 fill-current text-stone-900">
+                        <use
+                          href="./assets/images/icons/sprite.svg#facebook-fill"
+                        ></use></svg
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><svg class="h-6 w-6 fill-current text-stone-900">
+                        <use
+                          href="./assets/images/icons/sprite.svg#linkedin-fill"
+                        ></use></svg
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><svg class="h-6 w-6 fill-current text-stone-900">
+                        <use
+                          href="./assets/images/icons/sprite.svg#twitter-fill"
+                        ></use></svg
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <svg class="h-6 w-6 fill-current text-stone-900">
+                        <use
+                          href="./assets/images/icons/sprite.svg#instagram-line"
+                        ></use></svg
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="contact-form w-full bg-stone-900 p-8 max-sm:order-1 max-sm:rounded-[30px] sm:w-3/5 sm:rounded-br-[30px] sm:rounded-tr-[30px] sm:p-10"
+            >
+              <div class="content">
+                <div class="mb-9">
+                  <h3 class="mb-4 text-xl font-medium text-white sm:text-3xl">
+                    Contact us
+                  </h3>
+                  <p class="text-white sm:text-lg">
+                    You can also complete the contact form available on our
+                    website. Our branches are located in Riyadh, Jeddah, and
+                    Dammam, ensuring we can effectively serve customers across
+                    the Kingdom.
+                  </p>
+                </div>
+
+                <form class="space-y-6">
+                  <div class="flex flex-col gap-4 sm:flex-row sm:gap-6">
+                    <input
+                      type="text"
+                      class="block w-full rounded-lg px-6 py-4 text-stone-900 sm:w-1/2 sm:px-8 sm:text-lg"
+                      placeholder="Your name"
+                    />
+                    <input
+                      type="email"
+                      class="block w-full rounded-lg px-6 py-4 text-stone-900 sm:w-1/2 sm:px-8 sm:text-lg"
+                      placeholder="Your Email Address"
+                    />
+                  </div>
+                  <div>
+                    <textarea
+                      rows="4"
+                      class="block w-full rounded-lg px-6 py-4 text-stone-900 sm:px-8 sm:text-lg"
+                      placeholder="Question"
+                    ></textarea>
+                  </div>
+
+                  <button
+                    class="group inline-flex items-center justify-center rounded-full border border-white bg-white p-2 transition-colors duration-300 hover:bg-transparent"
+                    type="submit"
+                  >
+                    <span
+                      class="px-4 py-1 font-bold text-stone-900 transition-colors duration-300 group-hover:text-white sm:text-lg"
+                      >Send Question</span
+                    >
+                    <span
+                      class="flex h-11 w-11 items-center justify-center rounded-full bg-stone-900 transition-colors duration-300 group-hover:bg-white"
+                    >
+                      <svg
+                        class="h-6 w-6 fill-current text-white transition-colors duration-300 group-hover:text-stone-900"
+                      >
+                        <use
+                          href="./assets/images/icons/sprite.svg#btn-arrow-right"
+                        ></use>
+                      </svg>
+                    </span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- /contact -->
+      </main>
+
+      <section id="cta" class="bg-zinc-900">
+        <div
+          class="sm:before:clippy-top container relative mx-auto px-4 pt-12 sm:pt-36 sm:before:absolute sm:before:-top-px sm:before:start-4 sm:before:h-11 sm:before:w-[500px] sm:before:bg-white"
+        >
+          <div class="cta-wrapper flex flex-col items-start gap-12 sm:flex-row">
+            <div class="w-full max-lg:order-2 sm:w-1/2">
+              <img
+                src="./assets/images/home-cta.png"
+                class="cta-img block w-full"
+                alt=""
+              />
+            </div>
+
+            <div class="w-full max-lg:order-1 sm:w-1/2">
+              <h2
+                class="cta-title mb-6 text-4xl font-extrabold text-white sm:text-6xl sm:leading-[76px]"
+              >
+                Already to improve or repair ? Let’s Talk!
+              </h2>
+
+              <div
+                class="mb-12 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6"
+              >
+                <div class="cta-feature flex items-center">
+                  <svg
+                    class="me-2 inline-block h-6 w-6 fill-current text-red-600"
+                  >
+                    <use href="./assets/images/icons/sprite.svg#check"></use>
+                  </svg>
+                  <span class="text-lg leading-loose text-red-600 sm:text-xl"
+                    >Free Quotes</span
+                  >
+                </div>
+
+                <div class="cta-feature flex items-center">
+                  <svg
+                    class="me-2 inline-block h-6 w-6 fill-current text-red-600"
+                  >
+                    <use href="./assets/images/icons/sprite.svg#check"></use>
+                  </svg>
+                  <span class="text-lg leading-loose text-red-600 sm:text-xl"
+                    >100% Commitment-Free
+                  </span>
+                </div>
+              </div>
+
+              <a
+                href="#"
+                class="cta-link group inline-flex items-center justify-center rounded-full border border-red-600 bg-red-600 p-2 transition-colors hover:bg-transparent"
+              >
+                <span
+                  class="px-4 py-1 text-lg font-bold text-white transition-colors group-hover:text-red-600"
+                  >Call Us Now</span
+                >
+                <span
+                  class="flex h-11 w-11 items-center justify-center rounded-full border border-red-600 bg-white transition-colors group-hover:bg-transparent"
+                >
+                  <svg
+                    class="h-6 w-6 fill-current text-red-600 transition-colors group-hover:text-red-600"
+                  >
+                    <use href="./assets/images/icons/sprite.svg#phone"></use>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /cta -->
+
+      <footer id="footer">
+        <div class="section py-12 sm:py-24">
+          <div class="flex flex-col justify-between gap-10 sm:flex-row">
+            <div class="space-y-6">
+              <img src="./assets/images/logo-footer.png" class="w-24" alt="" />
+
+              <p class="max-w-md text-lg leading-7 text-zinc-900">
+                Home Pro is your premier destination for top-notch smart home
+                service and repair.
+              </p>
+
+              <ul class="flex gap-3">
+                <li>
+                  <a
+                    href="#"
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-stone-900 text-white transition-colors duration-200 hover:bg-red"
+                    ><svg class="h-5 w-5 fill-current">
+                      <use
+                        href="./assets/images/icons/sprite.svg#facebook-fill"
+                      ></use></svg
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-stone-900 text-white transition-colors duration-200 hover:bg-red"
+                    ><svg class="h-5 w-5 fill-current">
+                      <use
+                        href="./assets/images/icons/sprite.svg#linkedin-fill"
+                      ></use></svg
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-stone-900 text-white transition-colors duration-200 hover:bg-red"
+                    ><svg class="h-5 w-5 fill-current">
+                      <use
+                        href="./assets/images/icons/sprite.svg#twitter-fill"
+                      ></use></svg
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-stone-900 text-white transition-colors duration-200 hover:bg-red"
+                  >
+                    <svg class="h-5 w-5 fill-current">
+                      <use
+                        href="./assets/images/icons/sprite.svg#instagram-line"
+                      ></use></svg
+                  ></a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="max-w-[260px] space-y-4 sm:space-y-6">
+              <h4
+                class="text-xl font-bold leading-loose text-zinc-900 sm:text-2xl"
+              >
+                Company
+              </h4>
+
+              <ul class="flex flex-wrap gap-y-2 sm:gap-y-3">
+                <li class="basis-1/2">
+                  <a
+                    href="./index.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    Home
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./about.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    About us
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./services.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    Services
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./customers.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    Customers
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./team.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    Team
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./contact.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    Contacts
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./faq.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    FAQs
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <p
+          class="border-t border-white border-opacity-30 py-8 text-center text-lg text-zinc-950"
+        >
+          &copy;2023 Stars . All rights reserved
+        </p>
+      </footer>
+    </div>
+    <!-- /app -->
+
+    <!-- js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const reviews = new Swiper("#reviews .swiper", {
+        speed: 600,
+        parallax: true,
+
+        pagination: {
+          el: "#reviews .swiper-pagination",
+        },
+
+        navigation: {
+          nextEl: "#reviews .swiper-button-next",
+          prevEl: "#reviews .swiper-button-prev",
+        },
+      });
+
+      const services = new Swiper("#services .swiper", {
+        speed: 600,
+        spaceBetween: 35,
+        loop: true,
+
+        breakpoints: {
+          600: {
+            slidesPerView: 1.15,
+            spaceBetweenSlides: 20,
+          },
+          768: {
+            slidesPerView: 2.25,
+            spaceBetweenSlides: 35,
+          },
+        },
+        navigation: {
+          nextEl: "#services .swiper-button-next",
+          prevEl: "#services .swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>

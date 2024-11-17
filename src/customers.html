@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <title>Stars</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./assets/styles/styles.css" />
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/preline@2.0.2/dist/preline.min.js"
+    ></script>
+    <script defer src="./assets/scripts/main.js"></script>
+
+    <script defer src="./assets/scripts/customers.js"></script>
+  </head>
+
+  <body>
+    <div
+      id="preloader"
+      class="fixed inset-0 isolate z-50 flex h-full w-full items-center justify-center bg-zinc-800"
+    >
+      <img
+        src="./assets/images/icons/sparkle-outline.png"
+        class="star star-outline absolute z-20 m-auto h-56 opacity-0 rotate-45 scale-0 sm:h-3/5"
+        alt=""
+      />
+      <img
+        src="./assets/images/icons/sparkle.png"
+        class="star star-solid absolute z-20 m-auto h-56 opacity-0 rotate-45 scale-0 sm:h-3/5"
+        alt=""
+      />
+
+      <div
+        class="bg-overlay absolute inset-0 z-10 m-auto aspect-square w-full rounded-full bg-zinc-900 scale-0"
+      ></div>
+    </div>
+    <!-- /preloader -->
+
+    <div id="menu" class="menu" data-lenis-prevent>
+      <div class="navbar wrapper">
+        <img src="./assets/images/logo.png" class="navbar__logo" alt="" />
+
+        <button
+          type="button"
+          class="navbar__btn"
+          aria-label="open menu"
+          onclick="closeMenu()"
+        >
+          <img
+            class="mx-auto w-12"
+            src="./assets/images/icons/men-x.svg"
+            alt=""
+          />
+        </button>
+      </div>
+
+      <nav class="menu__nav wrapper">
+        <ul class="menu__nav-list">
+          <li>
+            <a href="./index.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="./about.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">About</span>
+            </a>
+          </li>
+          <li>
+            <a href="./services.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">Services</span>
+            </a>
+          </li>
+          <li>
+            <a href="./customers.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">Customers</span>
+            </a>
+          </li>
+          <li>
+            <a href="./team.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">Team</span>
+            </a>
+          </li>
+          <li>
+            <a href="./contact.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">Contact</span>
+            </a>
+          </li>
+          <li>
+            <a href="./faq.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">FAQs</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- /menu -->
+
+    <div id="app">
+      <header class="header">
+        <div class="wrapper">
+          <div class="navbar">
+            <img src="./assets/images/logo.png" class="navbar__logo" alt="" />
+
+            <button
+              id="navBarBtn"
+              type="button"
+              class="navbar__btn"
+              aria-label="open menu"
+              onclick="openMenu()"
+            >
+              <img
+                class="navbar__btn-icon"
+                src="./assets/images/icons/menu.svg"
+                alt=""
+              />
+              <img
+                id="navBarBtnSparkle"
+                src="./assets/images/icons/sparkle.png"
+                class="navbar__btn-sparkle"
+                alt=""
+              />
+            </button>
+          </div>
+
+          <div class="header__hero">
+            <hgroup>
+              <p class="header__subtitle">Valued Customers</p>
+              <h1 class="header__title">
+                Forklift and Material Handling Equipment (MHE)
+              </h1>
+            </hgroup>
+
+            <div>
+              <img
+                src="./assets/images/customers/hero-img.png"
+                class="header__img"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- /header -->
+
+      <main class="space-y-24 py-24 sm:py-48">
+        <section id="intro" class="wrapper">
+          <div
+            class="grid grid-cols-1 items-center gap-8 sm:grid-cols-2 sm:gap-16"
+          >
+            <div class="-mx-4 flex items-start">
+              <div class="w-4/6 flex-shrink-0 px-2">
+                <img
+                  src="./assets/images/customers/intro-lg.png"
+                  class="img1 rounded-3xl object-cover object-center"
+                  alt=""
+                />
+              </div>
+              <div class="w-2/6 flex-shrink-0 px-2">
+                <img
+                  src="./assets/images/customers/intro-sm.png"
+                  class="img2 rounded-3xl object-cover object-center shadow-md"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="text space-y-6">
+              <h2
+                class="text-2xl font-semibold leading-relaxed text-stone-900 sm:mb-8 sm:text-5xl"
+              >
+                We are immensely proud of our esteemed partners and customers
+              </h2>
+
+              <p class="text-lg text-stone-900">
+                who have placed their trust in our services and products. We
+                cherish the successful contractual relationships wehave
+                established and the opportunities that have allowed us to
+                contribute to the success of numerous companies and
+                institutions.
+              </p>
+              <p class="text-lg text-stone-900">
+                Our unwavering dedication and professionalism have enabled us to
+                achieve exceptional results and consistently meet the
+                expectations of our valued customers. Here are some of our
+                leading customers:
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="customers" class="wrapper">
+          <header class="services-title mx-auto mb-7 w-fit sm:mb-12">
+            <h2
+              class="text-2xl font-medium uppercase leading-10 text-red-600 sm:text-3xl"
+            >
+              Valued Customers:
+            </h2>
+            <span class="mt-2 inline-block h-0.5 w-14 bg-red-600"></span>
+          </header>
+
+          <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
+            <div
+              class="client group relative isolate rounded-3xl transition-transform duration-300 hover:scale-105"
+            >
+              <div
+                class="client__text relative z-20 h-full min-h-[600px] space-y-5 rounded-3xl bg-black/90 p-8 text-white opacity-0 transition-all duration-500 scale-75 group-hover:opacity-100 group-hover:scale-90"
+              >
+                <img
+                  class="h-[45px]"
+                  src="./assets/images/customers/logo-1.png"
+                />
+                <p class="text-xl font-medium">
+                  SMSA Express - Mail and Delivery:
+                </p>
+                <p class="text-lg leading-relaxed">
+                  Our team conducts scheduled on-site visits to inspect and
+                  perform routine maintenance on the customers equipment to
+                  ensure its optimal performance. Samsa is a leading provider of
+                  express mail and delivery services through its global network
+                  of branches.
+                </p>
+              </div>
+
+              <div
+                class="client__img absolute inset-0 z-10 flex items-center justify-center rounded-3xl bg-[#401197]"
+              >
+                <img
+                  class="w-52 sm:w-[325px]"
+                  src="./assets/images/customers/logo-1.png"
+                />
+              </div>
+            </div>
+
+            <div
+              class="client group relative isolate rounded-3xl transition-transform duration-300 hover:scale-105"
+            >
+              <div
+                class="client__text relative z-20 h-full min-h-[600px] space-y-5 rounded-3xl bg-black/90 p-8 text-white opacity-0 transition-all duration-500 scale-75 group-hover:opacity-100 group-hover:scale-90"
+              >
+                <img class="h-[65px]" src="./assets/images/clients/saco.png" />
+                <p class="text-xl font-medium">
+                  SACO - Hardware, Retail and Home Improvement Company
+                </p>
+                <p class="text-lg leading-relaxed">
+                  A dedicated team has been assigned to manage the customer's
+                  equipment and machinery. Their primary responsibility is to be
+                  stationed at the customer's central warehouse in Riyadh. Their
+                  primary objective is to prevent equipment downtime and
+                  promptly address any malfunctions to avoid disruptions to the
+                  operational process. Saco is recognized as one of the
+                  Kingdom's leading providers of hardware, tools, and home
+                  improvement solutions for all consumers.
+                </p>
+              </div>
+
+              <div
+                class="client__img absolute inset-0 z-10 flex items-center justify-center rounded-3xl bg-[#BAA58A]"
+              >
+                <img
+                  class="w-52 sm:w-[325px]"
+                  src="./assets/images/clients/saco.png"
+                />
+              </div>
+            </div>
+
+            <div
+              class="client group relative isolate rounded-3xl transition-transform duration-300 hover:scale-105"
+            >
+              <div
+                class="client__text relative z-20 h-full min-h-[600px] space-y-5 rounded-3xl bg-black/90 p-8 text-white opacity-0 transition-all duration-500 scale-75 group-hover:opacity-100 group-hover:scale-90"
+              >
+                <img
+                  class="h-[65px]"
+                  src="./assets/images/clients/orient.png"
+                />
+                <p class="text-xl font-medium">
+                  Orient Catering Company (Orient) - Food and Consumer Goods
+                </p>
+                <p class="text-lg leading-relaxed">
+                  Our team covers all of the company's multiple warehouses
+                  located across various regions of the Kingdom. The team is
+                  committed to ensuring that the customer's equipment and
+                  machinery remain operational, as downtime would negatively
+                  impact warehouse operations, particularly loading and
+                  unloading activities. Orient Catering Company is a prominent
+                  distributor of canned food products and consumer goods for
+                  monthly brands.
+                </p>
+              </div>
+
+              <div
+                class="client__img absolute inset-0 z-10 flex items-center justify-center rounded-3xl bg-green-200"
+              >
+                <img
+                  class="w-52 sm:w-[226px]"
+                  src="./assets/images/clients/orient.png"
+                />
+              </div>
+            </div>
+
+            <div
+              class="client group relative isolate rounded-3xl transition-transform duration-300 hover:scale-105"
+            >
+              <div
+                class="client__text relative z-20 h-full min-h-[600px] space-y-5 rounded-3xl bg-black/90 p-8 text-white opacity-0 transition-all duration-500 scale-75 group-hover:opacity-100 group-hover:scale-90"
+              >
+                <img
+                  class="h-[65px]"
+                  src="./assets/images/clients/saleheya-w.png"
+                />
+                <p class="text-xl font-medium">
+                  Al-Salehiya Company - Medical and Health Supplies
+                </p>
+                <p class="text-lg leading-relaxed">
+                  Our team provides maintenance services for all Al-Salehiya
+                  equipment across various cities in the Kingdom. Our focus is
+                  on preserving the customer's policy of product accuracy across
+                  all locations and maintaining the flow of work to uphold
+                  supply schedules. Al-Salehiya Company is a leading provider of
+                  medical and health products in the Gulf region and supplies a
+                  wide range of products to numerous hospitals in the Kingdom.
+                </p>
+              </div>
+
+              <div
+                class="client__img absolute inset-0 z-10 flex items-center justify-center rounded-3xl bg-[#222229]"
+              >
+                <img
+                  class="w-52 sm:w-[325px]"
+                  src="./assets/images/clients/saleheya-w.png"
+                />
+              </div>
+            </div>
+
+            <div
+              class="client group relative isolate rounded-3xl transition-transform duration-300 hover:scale-105"
+            >
+              <div
+                class="client__text relative z-20 h-full min-h-[600px] space-y-5 rounded-3xl bg-black/90 p-8 text-white opacity-0 transition-all duration-500 scale-75 group-hover:opacity-100 group-hover:scale-90"
+              >
+                <img
+                  class="h-[65px]"
+                  src="./assets/images/clients/AlMunajem-lg.png"
+                />
+                <p class="text-xl font-medium">
+                  Al-Monajjem Company - Food Supplies
+                </p>
+                <p class="text-lg leading-relaxed">
+                  Our team performs various maintenance tasks on Al-Ma'na
+                  Company's equipment in its branches throughout the Kingdom.
+                  Additionally, we provide them with flexible rental options for
+                  cranes of various sizes. Al-Ma'na Company is distinguished by
+                  its ownership of leading brands in the Saudi market and a
+                  legacy spanning over 40 years.
+                </p>
+              </div>
+
+              <div
+                class="client__img absolute inset-0 z-10 flex items-center justify-center rounded-3xl bg-[#BAD1E8]"
+              >
+                <img
+                  class="w-52 sm:w-[259px]"
+                  src="./assets/images/clients/AlMunajem-lg.png"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <section id="cta" class="bg-zinc-900">
+        <div
+          class="sm:before:clippy-top container relative mx-auto px-4 pt-12 sm:pt-36 sm:before:absolute sm:before:-top-px sm:before:start-4 sm:before:h-11 sm:before:w-[500px] sm:before:bg-white"
+        >
+          <div class="cta-wrapper flex flex-col items-start gap-12 sm:flex-row">
+            <div class="w-full max-lg:order-2 sm:w-1/2">
+              <img
+                src="./assets/images/home-cta.png"
+                class="cta-img block w-full"
+                alt=""
+              />
+            </div>
+
+            <div class="w-full max-lg:order-1 sm:w-1/2">
+              <h2
+                class="cta-title mb-6 text-4xl font-extrabold text-white sm:text-6xl sm:leading-[76px]"
+              >
+                Already to improve or repair ? Let’s Talk!
+              </h2>
+
+              <div
+                class="mb-12 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6"
+              >
+                <div class="cta-feature flex items-center">
+                  <svg
+                    class="me-2 inline-block h-6 w-6 fill-current text-red-600"
+                  >
+                    <use href="./assets/images/icons/sprite.svg#check"></use>
+                  </svg>
+                  <span class="text-lg leading-loose text-red-600 sm:text-xl"
+                    >Free Quotes</span
+                  >
+                </div>
+
+                <div class="cta-feature flex items-center">
+                  <svg
+                    class="me-2 inline-block h-6 w-6 fill-current text-red-600"
+                  >
+                    <use href="./assets/images/icons/sprite.svg#check"></use>
+                  </svg>
+                  <span class="text-lg leading-loose text-red-600 sm:text-xl"
+                    >100% Commitment-Free
+                  </span>
+                </div>
+              </div>
+
+              <a
+                href="#"
+                class="cta-link group inline-flex items-center justify-center rounded-full border border-red-600 bg-red-600 p-2 transition-colors hover:bg-transparent"
+              >
+                <span
+                  class="px-4 py-1 text-lg font-bold text-white transition-colors group-hover:text-red-600"
+                  >Call Us Now</span
+                >
+                <span
+                  class="flex h-11 w-11 items-center justify-center rounded-full border border-red-600 bg-white transition-colors group-hover:bg-transparent"
+                >
+                  <svg
+                    class="h-6 w-6 fill-current text-red-600 transition-colors group-hover:text-red-600"
+                  >
+                    <use href="./assets/images/icons/sprite.svg#phone"></use>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /cta -->
+
+      <footer id="footer">
+        <div class="section py-12 sm:py-24">
+          <div class="flex flex-col justify-between gap-10 sm:flex-row">
+            <div class="space-y-6">
+              <img src="./assets/images/logo-footer.png" class="w-24" alt="" />
+
+              <p class="max-w-md text-lg leading-7 text-zinc-900">
+                Home Pro is your premier destination for top-notch smart home
+                service and repair.
+              </p>
+
+              <ul class="flex gap-3">
+                <li>
+                  <a
+                    href="#"
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-stone-900 text-white transition-colors duration-200 hover:bg-red"
+                    ><svg class="h-5 w-5 fill-current">
+                      <use
+                        href="./assets/images/icons/sprite.svg#facebook-fill"
+                      ></use></svg
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-stone-900 text-white transition-colors duration-200 hover:bg-red"
+                    ><svg class="h-5 w-5 fill-current">
+                      <use
+                        href="./assets/images/icons/sprite.svg#linkedin-fill"
+                      ></use></svg
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-stone-900 text-white transition-colors duration-200 hover:bg-red"
+                    ><svg class="h-5 w-5 fill-current">
+                      <use
+                        href="./assets/images/icons/sprite.svg#twitter-fill"
+                      ></use></svg
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-stone-900 text-white transition-colors duration-200 hover:bg-red"
+                  >
+                    <svg class="h-5 w-5 fill-current">
+                      <use
+                        href="./assets/images/icons/sprite.svg#instagram-line"
+                      ></use></svg
+                  ></a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="max-w-[260px] space-y-4 sm:space-y-6">
+              <h4
+                class="text-xl font-bold leading-loose text-zinc-900 sm:text-2xl"
+              >
+                Company
+              </h4>
+
+              <ul class="flex flex-wrap gap-y-2 sm:gap-y-3">
+                <li class="basis-1/2">
+                  <a
+                    href="./index.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    Home
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./about.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    About us
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./services.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    Services
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./customers.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    Customers
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./team.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    Team
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./contact.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    Contacts
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./faq.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    FAQs
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <p
+          class="border-t border-white border-opacity-30 py-8 text-center text-lg text-zinc-950"
+        >
+          &copy;2023 Stars . All rights reserved
+        </p>
+      </footer>
+    </div>
+    <!-- /app -->
+  </body>
+</html>

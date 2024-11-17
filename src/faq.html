@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <title>Stars</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./assets/styles/styles.css" />
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/preline@2.0.2/dist/preline.min.js"
+    ></script>
+    <script defer src="./assets/scripts/main.js"></script>
+
+    <script defer src="./assets/scripts/faq.js"></script>
+  </head>
+
+  <body>
+    <div
+      id="preloader"
+      class="fixed inset-0 isolate z-50 flex h-full w-full items-center justify-center bg-zinc-800"
+    >
+      <img
+        src="./assets/images/icons/sparkle-outline.png"
+        class="star star-outline absolute z-20 m-auto h-56 opacity-0 rotate-45 scale-0 sm:h-3/5"
+        alt=""
+      />
+      <img
+        src="./assets/images/icons/sparkle.png"
+        class="star star-solid absolute z-20 m-auto h-56 opacity-0 rotate-45 scale-0 sm:h-3/5"
+        alt=""
+      />
+
+      <div
+        class="bg-overlay absolute inset-0 z-10 m-auto aspect-square w-full rounded-full bg-zinc-900 scale-0"
+      ></div>
+    </div>
+    <!-- /preloader -->
+
+    <div id="menu" class="menu" data-lenis-prevent>
+      <div class="navbar wrapper">
+        <img src="./assets/images/logo.png" class="navbar__logo" alt="" />
+
+        <button
+          type="button"
+          class="navbar__btn"
+          aria-label="open menu"
+          onclick="closeMenu()"
+        >
+          <img
+            class="mx-auto w-12"
+            src="./assets/images/icons/men-x.svg"
+            alt=""
+          />
+        </button>
+      </div>
+
+      <nav class="menu__nav wrapper">
+        <ul class="menu__nav-list">
+          <li>
+            <a href="./index.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="./about.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">About</span>
+            </a>
+          </li>
+          <li>
+            <a href="./services.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">Services</span>
+            </a>
+          </li>
+          <li>
+            <a href="./customers.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">Customers</span>
+            </a>
+          </li>
+          <li>
+            <a href="./team.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">Team</span>
+            </a>
+          </li>
+          <li>
+            <a href="./contact.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">Contact</span>
+            </a>
+          </li>
+          <li>
+            <a href="./faq.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">FAQs</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- /menu -->
+
+    <div id="app">
+      <header class="header">
+        <div class="wrapper">
+          <div class="navbar">
+            <img src="./assets/images/logo.png" class="navbar__logo" alt="" />
+
+            <button
+              id="navBarBtn"
+              type="button"
+              class="navbar__btn"
+              aria-label="open menu"
+              onclick="openMenu()"
+            >
+              <img
+                class="navbar__btn-icon"
+                src="./assets/images/icons/menu.svg"
+                alt=""
+              />
+              <img
+                id="navBarBtnSparkle"
+                src="./assets/images/icons/sparkle.png"
+                class="navbar__btn-sparkle"
+                alt=""
+              />
+            </button>
+          </div>
+
+          <div class="header__hero">
+            <hgroup>
+              <p class="header__subtitle">FAQs</p>
+              <h1 class="header__title">Frequently Asked Questions (FAQs)</h1>
+            </hgroup>
+
+            <div>
+              <img
+                src="./assets/images/faq/hero-img.png"
+                class="header__img"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- /header -->
+
+      <main class="space-y-24 py-24 sm:py-48">
+        <section id="faq" class="wrapper relative">
+          <div class="grid grid-cols-1 gap-8 sm:grid-cols-5 sm:gap-14">
+            <div class="sm:sticky sm:top-10 sm:col-span-2 sm:self-start">
+              <div class="faq-text">
+                <h2
+                  class="mb-6 text-2xl font-bold text-zinc-900 sm:text-5xl sm:leading-snug"
+                >
+                  Frequently Asked Questions
+                </h2>
+                <p class="mb-12 text-xl text-zinc-900">
+                  Still need help? &ThickSpace;
+                  <a
+                    href="./contact.html"
+                    class="text-lg font-bold text-red-600 underline hover:no-underline sm:text-2xl"
+                    >Get Help Now</a
+                  >
+                </p>
+              </div>
+
+              <div class="flex justify-end">
+                <img
+                  src="./assets/images/faq/faq-img.png"
+                  class="faq-img flex-shrink-0 rtl:rotate-y-180 sm:w-[135%] sm:max-w-none"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div id="faq-qs" class="sm:col-span-3">
+              <div class="hs-accordion-group space-y-2 sm:space-y-8">
+                <div
+                  class="hs-accordion active rounded-xl bg-white transition-colors hs-accordion-active:bg-slate-100"
+                  id="hs-accordion-1"
+                >
+                  <button
+                    class="hs-accordion-toggle py-4text-stone-900 inline-flex w-full items-center justify-between gap-x-3 p-6 text-start text-lg font-semibold disabled:pointer-events-none disabled:opacity-50 sm:px-8"
+                    aria-controls="hs-collapse-1"
+                  >
+                    Does the company maintain all types of forklifts with
+                    different company names?
+
+                    <svg
+                      class="h-8 w-8 transition-transform hs-accordion-active:rotate-180"
+                    >
+                      <use
+                        href="./assets/images/icons/sprite.svg#arrow-down"
+                      ></use>
+                    </svg>
+                  </button>
+                  <div
+                    id="hs-collapse-1"
+                    class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300"
+                    aria-labelledby="hs-accordion-1"
+                  >
+                    <div class="px-6 pb-6 sm:px-8">
+                      <p class="text-stone-900 opacity-70">
+                        Yes, the company possesses the expertise and experience
+                        to maintain forklifts of various brands, industries, and
+                        sizes. Their team is well-versed in handling a wide
+                        range of equipment, ensuring comprehensive and reliable
+                        maintenance services.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="hs-accordion rounded-xl bg-white transition-colors hs-accordion-active:bg-slate-100"
+                  id="hs-accordion-2"
+                >
+                  <button
+                    class="hs-accordion-toggle py-4text-stone-900 inline-flex w-full items-center justify-between gap-x-3 p-6 text-start text-lg font-semibold disabled:pointer-events-none disabled:opacity-50 sm:px-8"
+                    aria-controls="hs-collapse-2"
+                  >
+                    Does the company have a fleet that covers all regions of the
+                    Kingdom?
+
+                    <svg
+                      class="h-8 w-8 transition-transform hs-accordion-active:rotate-180"
+                    >
+                      <use
+                        href="./assets/images/icons/sprite.svg#arrow-down"
+                      ></use>
+                    </svg>
+                  </button>
+                  <div
+                    id="hs-collapse-2"
+                    class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                    aria-labelledby="hs-accordion-2"
+                  >
+                    <div class="px-6 pb-6 sm:px-8">
+                      <p class="text-stone-900 opacity-70">
+                        Yes, the company's extensive network of branches and
+                        service personnel spans across all regions and
+                        governorates within the Kingdom of Saudi Arabia. They
+                        are equipped to address the needs of customers in every
+                        part of the country, ensuring prompt and efficient
+                        service delivery.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="hs-accordion rounded-xl bg-white transition-colors hs-accordion-active:bg-slate-100"
+                  id="hs-accordion-3"
+                >
+                  <button
+                    class="hs-accordion-toggle py-4text-stone-900 inline-flex w-full items-center justify-between gap-x-3 p-6 text-start text-lg font-semibold disabled:pointer-events-none disabled:opacity-50 sm:px-8"
+                    aria-controls="hs-collapse-3"
+                  >
+                    What is the source of the spare parts used by the company?
+
+                    <svg
+                      class="h-8 w-8 transition-transform hs-accordion-active:rotate-180"
+                    >
+                      <use
+                        href="./assets/images/icons/sprite.svg#arrow-down"
+                      ></use>
+                    </svg>
+                  </button>
+                  <div
+                    id="hs-collapse-3"
+                    class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                    aria-labelledby="hs-accordion-3"
+                  >
+                    <div class="px-6 pb-6 sm:px-8">
+                      <p class="text-stone-900 opacity-70">
+                        The company prioritizes providing original spare parts
+                        to maintain the optimal performance and longevity of
+                        their customers' equipment. They procure spare parts
+                        from a diverse range of reliable suppliers, both within
+                        and outside the Kingdom, ensuring a consistent supply of
+                        high-quality components.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="hs-accordion rounded-xl bg-white transition-colors hs-accordion-active:bg-slate-100"
+                  id="hs-accordion-4"
+                >
+                  <button
+                    class="hs-accordion-toggle py-4text-stone-900 inline-flex w-full items-center justify-between gap-x-3 p-6 text-start text-lg font-semibold disabled:pointer-events-none disabled:opacity-50 sm:px-8"
+                    aria-controls="hs-collapse-4"
+                  >
+                    What are the company's roles in consulting and inspection?
+
+                    <svg
+                      class="h-8 w-8 transition-transform hs-accordion-active:rotate-180"
+                    >
+                      <use
+                        href="./assets/images/icons/sprite.svg#arrow-down"
+                      ></use>
+                    </svg>
+                  </button>
+                  <div
+                    id="hs-collapse-4"
+                    class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                    aria-labelledby="hs-accordion-4"
+                  >
+                    <div class="px-6 pb-6 sm:px-8">
+                      <p class="text-stone-900 opacity-70">
+                        The company offers comprehensive consulting services to
+                        assist customers in selecting the most suitable
+                        forklifts for their specific requirements and site
+                        conditions. Their experienced team conducts thorough
+                        site inspections and analyses to identify opportunities
+                        for space optimization and operational efficiency
+                        improvements.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="hs-accordion rounded-xl bg-white transition-colors hs-accordion-active:bg-slate-100"
+                  id="hs-accordion-5"
+                >
+                  <button
+                    class="hs-accordion-toggle py-4text-stone-900 inline-flex w-full items-center justify-between gap-x-3 p-6 text-start text-lg font-semibold disabled:pointer-events-none disabled:opacity-50 sm:px-8"
+                    aria-controls="hs-collapse-5"
+                  >
+                    What are the types of forklifts that the company repairs,
+                    maintains, and rents?
+
+                    <svg
+                      class="h-8 w-8 transition-transform hs-accordion-active:rotate-180"
+                    >
+                      <use
+                        href="./assets/images/icons/sprite.svg#arrow-down"
+                      ></use>
+                    </svg>
+                  </button>
+                  <div
+                    id="hs-collapse-5"
+                    class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                    aria-labelledby="hs-accordion-5"
+                  >
+                    <div class="px-6 pb-6 sm:px-8">
+                      <p class="text-stone-900 opacity-70">
+                        The company provides a full spectrum of services,
+                        including repair, maintenance, and rental, for forklifts
+                        of all types, including diesel, gasoline, gas, and
+                        electric-powered models. Their expertise extends to all
+                        aspects of forklift care, ensuring that customers have
+                        access to reliable and well-maintained equipment.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <section id="cta" class="bg-zinc-900">
+        <div
+          class="sm:before:clippy-top container relative mx-auto px-4 pt-12 sm:pt-36 sm:before:absolute sm:before:-top-px sm:before:start-4 sm:before:h-11 sm:before:w-[500px] sm:before:bg-white"
+        >
+          <div class="cta-wrapper flex flex-col items-start gap-12 sm:flex-row">
+            <div class="w-full max-lg:order-2 sm:w-1/2">
+              <img
+                src="./assets/images/home-cta.png"
+                class="cta-img block w-full"
+                alt=""
+              />
+            </div>
+
+            <div class="w-full max-lg:order-1 sm:w-1/2">
+              <h2
+                class="cta-title mb-6 text-4xl font-extrabold text-white sm:text-6xl sm:leading-[76px]"
+              >
+                Already to improve or repair ? Let’s Talk!
+              </h2>
+
+              <div
+                class="mb-12 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6"
+              >
+                <div class="cta-feature flex items-center">
+                  <svg
+                    class="me-2 inline-block h-6 w-6 fill-current text-red-600"
+                  >
+                    <use href="./assets/images/icons/sprite.svg#check"></use>
+                  </svg>
+                  <span class="text-lg leading-loose text-red-600 sm:text-xl"
+                    >Free Quotes</span
+                  >
+                </div>
+
+                <div class="cta-feature flex items-center">
+                  <svg
+                    class="me-2 inline-block h-6 w-6 fill-current text-red-600"
+                  >
+                    <use href="./assets/images/icons/sprite.svg#check"></use>
+                  </svg>
+                  <span class="text-lg leading-loose text-red-600 sm:text-xl"
+                    >100% Commitment-Free
+                  </span>
+                </div>
+              </div>
+
+              <a
+                href="#"
+                class="cta-link group inline-flex items-center justify-center rounded-full border border-red-600 bg-red-600 p-2 transition-colors hover:bg-transparent"
+              >
+                <span
+                  class="px-4 py-1 text-lg font-bold text-white transition-colors group-hover:text-red-600"
+                  >Call Us Now</span
+                >
+                <span
+                  class="flex h-11 w-11 items-center justify-center rounded-full border border-red-600 bg-white transition-colors group-hover:bg-transparent"
+                >
+                  <svg
+                    class="h-6 w-6 fill-current text-red-600 transition-colors group-hover:text-red-600"
+                  >
+                    <use href="./assets/images/icons/sprite.svg#phone"></use>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /cta -->
+
+      <footer id="footer">
+        <div class="section py-12 sm:py-24">
+          <div class="flex flex-col justify-between gap-10 sm:flex-row">
+            <div class="space-y-6">
+              <img src="./assets/images/logo-footer.png" class="w-24" alt="" />
+
+              <p class="max-w-md text-lg leading-7 text-zinc-900">
+                Home Pro is your premier destination for top-notch smart home
+                service and repair.
+              </p>
+
+              <ul class="flex gap-3">
+                <li>
+                  <a
+                    href="#"
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-stone-900 text-white transition-colors duration-200 hover:bg-red"
+                    ><svg class="h-5 w-5 fill-current">
+                      <use
+                        href="./assets/images/icons/sprite.svg#facebook-fill"
+                      ></use></svg
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-stone-900 text-white transition-colors duration-200 hover:bg-red"
+                    ><svg class="h-5 w-5 fill-current">
+                      <use
+                        href="./assets/images/icons/sprite.svg#linkedin-fill"
+                      ></use></svg
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-stone-900 text-white transition-colors duration-200 hover:bg-red"
+                    ><svg class="h-5 w-5 fill-current">
+                      <use
+                        href="./assets/images/icons/sprite.svg#twitter-fill"
+                      ></use></svg
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-stone-900 text-white transition-colors duration-200 hover:bg-red"
+                  >
+                    <svg class="h-5 w-5 fill-current">
+                      <use
+                        href="./assets/images/icons/sprite.svg#instagram-line"
+                      ></use></svg
+                  ></a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="max-w-[260px] space-y-4 sm:space-y-6">
+              <h4
+                class="text-xl font-bold leading-loose text-zinc-900 sm:text-2xl"
+              >
+                Company
+              </h4>
+
+              <ul class="flex flex-wrap gap-y-2 sm:gap-y-3">
+                <li class="basis-1/2">
+                  <a
+                    href="./index.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    Home
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./about.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    About us
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./services.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    Services
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./customers.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    Customers
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./team.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    Team
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./contact.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    Contacts
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./faq.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    FAQs
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <p
+          class="border-t border-white border-opacity-30 py-8 text-center text-lg text-zinc-950"
+        >
+          &copy;2023 Stars . All rights reserved
+        </p>
+      </footer>
+    </div>
+    <!-- /app -->
+  </body>
+</html>

@@ -1,0 +1,1071 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <title>Stars</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./assets/styles/styles.css" />
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/preline@2.0.2/dist/preline.min.js"
+    ></script>
+    <script defer src="./assets/scripts/main.js"></script>
+
+    <script defer src="./assets/scripts/services.js"></script>
+  </head>
+
+  <body>
+    <div
+      id="preloader"
+      class="fixed inset-0 isolate z-50 flex h-full w-full items-center justify-center bg-zinc-800"
+    >
+      <img
+        src="./assets/images/icons/sparkle-outline.png"
+        class="star star-outline absolute z-20 m-auto h-56 opacity-0 rotate-45 scale-0 sm:h-3/5"
+        alt=""
+      />
+      <img
+        src="./assets/images/icons/sparkle.png"
+        class="star star-solid absolute z-20 m-auto h-56 opacity-0 rotate-45 scale-0 sm:h-3/5"
+        alt=""
+      />
+
+      <div
+        class="bg-overlay absolute inset-0 z-10 m-auto aspect-square w-full rounded-full bg-zinc-900 scale-0"
+      ></div>
+    </div>
+    <!-- /preloader -->
+
+    <div id="menu" class="menu" data-lenis-prevent>
+      <div class="navbar wrapper">
+        <img src="./assets/images/logo.png" class="navbar__logo" alt="" />
+
+        <button
+          type="button"
+          class="navbar__btn"
+          aria-label="open menu"
+          onclick="closeMenu()"
+        >
+          <img
+            class="mx-auto w-12"
+            src="./assets/images/icons/men-x.svg"
+            alt=""
+          />
+        </button>
+      </div>
+
+      <nav class="menu__nav wrapper">
+        <ul class="menu__nav-list">
+          <li>
+            <a href="./index.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="./about.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">About</span>
+            </a>
+          </li>
+          <li>
+            <a href="./services.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">Services</span>
+            </a>
+          </li>
+          <li>
+            <a href="./customers.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">Customers</span>
+            </a>
+          </li>
+          <li>
+            <a href="./team.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">Team</span>
+            </a>
+          </li>
+          <li>
+            <a href="./contact.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">Contact</span>
+            </a>
+          </li>
+          <li>
+            <a href="./faq.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">FAQs</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- /menu -->
+
+    <div id="app">
+      <header class="header">
+        <div class="wrapper">
+          <div class="navbar">
+            <img src="./assets/images/logo.png" class="navbar__logo" alt="" />
+
+            <button
+              id="navBarBtn"
+              type="button"
+              class="navbar__btn"
+              aria-label="open menu"
+              onclick="openMenu()"
+            >
+              <img
+                class="navbar__btn-icon"
+                src="./assets/images/icons/menu.svg"
+                alt=""
+              />
+              <img
+                id="navBarBtnSparkle"
+                src="./assets/images/icons/sparkle.png"
+                class="navbar__btn-sparkle"
+                alt=""
+              />
+            </button>
+          </div>
+
+          <div class="header__hero">
+            <hgroup>
+              <p class="header__subtitle">What we work for</p>
+              <h1 class="header__title">
+                Forklift and Material Handling Equipment (MHE)
+              </h1>
+            </hgroup>
+
+            <div>
+              <img
+                src="./assets/images/services/hero-img.png"
+                class="header__img"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- /header -->
+
+      <main class="space-y-28 pt-24 sm:pt-48">
+        <section id="intro" class="wrapper">
+          <div
+            class="grid grid-cols-1 items-center gap-9 sm:grid-cols-5 sm:gap-14"
+          >
+            <div class="sm:col-span-2" dir="rtl">
+              <img
+                src="./assets/images/services/forklift.png"
+                class="img w-full"
+                alt=""
+              />
+            </div>
+
+            <div class="sm:col-span-3">
+              <div class="space-y-6">
+                <p
+                  class="text text-lg font-semibold text-stone-900 sm:text-2xl sm:leading-9"
+                >
+                  At our company, we are dedicated to meeting the needs of our
+                  customers and providing them with reliable and effec tive
+                  solutions. We achieve this through a comprehe nsive range of
+                  services, including:
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <header class="services-title mx-auto mb-7 w-fit sm:mb-12">
+          <h2
+            class="text-2xl font-medium uppercase leading-10 text-red-600 sm:text-3xl"
+          >
+            what we work here
+          </h2>
+          <span class="mt-2 inline-block h-0.5 w-14 bg-red-600"></span>
+        </header>
+
+        <section class="service-1 wrapper">
+          <div
+            class="grid grid-cols-1 items-center gap-12 sm:grid-cols-2 sm:gap-24"
+          >
+            <header class="space-y-6 max-sm:order-2 sm:space-y-10">
+              <h2
+                class="title max-w-[22ch] text-2xl font-bold leading-relaxed sm:text-4xl"
+              >
+                Forklift and MHE rental contracts
+              </h2>
+
+              <div class="text space-y-4 text-lg sm:space-y-6">
+                <p>
+                  We offer a wide selection of forklifts with varying capacities
+                  and diverse applications, backed by highly flexible rental
+                  contracts that incorporate maintenance services.
+                </p>
+                <p>
+                  We carefully assess each customer's specific requirements and
+                  provide them with the most suitable equipment to streamline
+                  their operations and enhance productivity.
+                </p>
+                <p>
+                  We ensure that all equipment delivered to our customers' sites
+                  is in excellent condition, and ready for immediate use.
+                </p>
+                <p>
+                  Our rental contracts feature flexible terms and durations to
+                  accommodate a variety of customer needs.
+                </p>
+                <p>
+                  We provide rental services for all types of forklifts,
+                  including diesel, gasoline, gas, and electric-powered models.
+                </p>
+                <p>
+                  By providing these comprehensive services, we strive to
+                  empower our customers to achieve their operational goals and
+                  maximize efficiency.
+                </p>
+              </div>
+
+              <!-- <a
+                href="./service-single.html"
+                class="group inline-flex items-center justify-center rounded-full border border-black bg-black p-2 transition-colors duration-300 hover:bg-transparent"
+              >
+                <span
+                  class="px-4 py-1 font-bold text-white transition-colors duration-300 group-hover:text-black sm:text-lg"
+                  >Learn More</span
+                >
+                <span
+                  class="flex h-11 w-11 items-center justify-center rounded-full bg-white transition-colors duration-300 group-hover:bg-black"
+                >
+                  <svg
+                    class="h-5 w-5 fill-current text-black transition-colors duration-300 group-hover:text-white rtl:rotate-180"
+                  >
+                    <use
+                      href="./assets/images/icons/sprite.svg#btn-arrow-right-2"
+                    ></use>
+                  </svg>
+                </span>
+              </a> -->
+            </header>
+
+            <div
+              class="imgs relative flex items-center justify-center gap-4 max-sm:order-1"
+            >
+              <img
+                src="./assets/images/services/service-1-1.png"
+                class="img1 z-10 max-h-[620px] w-full flex-1 rounded-3xl object-cover object-center"
+                alt=""
+              />
+              <img
+                src="./assets/images/services/service-1-2.png"
+                class="img2 z-10 max-h-[620px] w-full flex-1 rounded-3xl object-cover object-center -translate-y-5 sm:-translate-y-10"
+                alt=""
+              />
+              <div
+                class="img-sm absolute z-20 m-auto inline-flex h-24 w-24 items-center justify-center rounded-full bg-white sm:h-28 sm:w-28"
+              >
+                <img
+                  src="./assets/images/services/forklift-sm.png"
+                  class="h-20 w-20 sm:h-24 sm:w-24"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="service-2 wrapper">
+          <div
+            class="grid grid-cols-1 overflow-hidden rounded-3xl sm:grid-cols-2"
+          >
+            <img
+              src="./assets/images/services/service-2.png"
+              class="img h-full w-full object-cover object-center"
+              alt=""
+            />
+
+            <!-- max-sm:rounded-3xl sm:p-20 ltr:sm:rounded-br-3xl ltr:sm:rounded-tr-3xl rtl:sm:rounded-bl-3xl rtl:sm:rounded-tl-3xl -->
+            <div
+              class="space-y-7 bg-stone-900 p-8 text-white sm:px-16 sm:py-20"
+            >
+              <h2 class="title text-2xl font-bold sm:text-4xl">
+                Forklift maintenance and repair contracts
+              </h2>
+
+              <div class="text space-y-4 text-lg sm:space-y-6">
+                <p>
+                  We offer comprehensive maintenance and repair services for
+                  forklifts, backed by flexible rental contracts. Our services
+                  encompass fault inspection, fault correction, and regular
+                  preventive maintenance to guarantee the reliable performance
+                  and safety of your forklift operations.
+                </p>
+                <p>
+                  We employ a meticulous approach to fault inspection and
+                  diagnosis, ensuring that problems are accurately identified
+                  and promptly resolved.
+                </p>
+                <p>
+                  We conduct regular preventive maintenance to safeguard against
+                  unplanned equipment downtime and maintain sustainable forklift
+                  performance.
+                </p>
+                <p>
+                  Our skilled technicians are well-equipped to install and
+                  replace necessary components and parts, ensuring that your
+                  forklifts operate at their peak efficiency.
+                </p>
+                <p>
+                  By providing these extensive maintenance and repair services,
+                  we aim to enhance the longevity and reliability of your
+                  forklifts, empowering you to focus on your core business
+                  operations without compromising safety or productivity.
+                </p>
+              </div>
+
+              <!-- <a
+                href="./service-single.html"
+                class="bg-wborder-white group inline-flex items-center justify-center rounded-full border border-white p-2 transition-colors duration-300 hover:bg-white"
+              >
+                <span
+                  class="px-4 py-1 font-bold text-white transition-colors duration-300 group-hover:text-black sm:text-lg"
+                  >Learn More</span
+                >
+                <span
+                  class="flex h-11 w-11 items-center justify-center rounded-full bg-white transition-colors duration-300 group-hover:bg-black"
+                >
+                  <svg
+                    class="h-5 w-5 fill-current text-black transition-colors duration-300 group-hover:text-white rtl:rotate-180"
+                  >
+                    <use
+                      href="./assets/images/icons/sprite.svg#btn-arrow-right-2"
+                    ></use>
+                  </svg>
+                </span>
+              </a> -->
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="service-3 overflow-hidden bg-neutral-100 pt-10 sm:pt-14"
+        >
+          <div class="wrapper">
+            <div class="mb-12 grid grid-cols-1 sm:grid-cols-2">
+              <div>
+                <h2 class="title mb-12 text-4xl font-bold text-black">
+                  Supply of spare parts
+                </h2>
+
+                <!-- <a
+                  href="./service-single.html"
+                  class="group inline-flex items-center justify-center rounded-full border border-black bg-black p-2 transition-colors duration-300 hover:bg-transparent"
+                >
+                  <span
+                    class="px-4 py-1 font-bold text-white transition-colors duration-300 group-hover:text-black sm:text-lg"
+                    >Learn More</span
+                  >
+                  <span
+                    class="flex h-11 w-11 items-center justify-center rounded-full bg-white transition-colors duration-300 group-hover:bg-black"
+                  >
+                    <svg
+                      class="h-5 w-5 fill-current text-black transition-colors duration-300 group-hover:text-white rtl:rotate-180"
+                    >
+                      <use
+                        href="./assets/images/icons/sprite.svg#btn-arrow-right-2"
+                      ></use>
+                    </svg>
+                  </span>
+                </a> -->
+              </div>
+
+              <div class="text space-y-4 sm:text-lg">
+                <p>
+                  We specialize in providing comprehensive maintenance and
+                  repair services for a wide range of material handling
+                  equipment, encompassing hydraulic lifts and other machinery
+                  commonly used in warehouse and factory settings. Our
+                  comprehensive maintenance and repair services include:
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="text mb-20 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-8 sm:text-lg"
+            >
+              <div>
+                <h3 class="mb-3 font-bold">Preventive Maintenance</h3>
+                We implement a proactive approach by scheduling regular
+                inspections and maintenance procedures to help prevent equipment
+                failures and extend the lifespan of your valuable assets.
+              </div>
+              <div>
+                <h3 class="mb-3 font-bold">Corrective Maintenance</h3>
+
+                In the event of equipment malfunctions, our skilled technicians
+                promptly diagnose the root cause of the issue and perform the
+                necessary repairs to restore the equipment to full
+                functionality.
+              </div>
+              <div>
+                <h3 class="mb-3 font-bold">Modifications and Improvements</h3>
+
+                We recognize that specific customer needs may require
+                modifications or improvements to existing equipment. Our team is
+                highly capable of making these adjustments to ensure that your
+                machinery aligns seamlessly with your unique requirements.
+              </div>
+            </div>
+
+            <div class="relative overflow-hidden py-px">
+              <img
+                src="./assets/images/services/service-3.png"
+                class="w-full rounded-tl-3xl rounded-tr-3xl"
+                alt=""
+              />
+
+              <div
+                class="service-img-overlay absolute inset-0 h-full w-full origin-bottom bg-neutral-100"
+              ></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="service-1 wrapper">
+          <div
+            class="grid grid-cols-1 items-center gap-12 sm:grid-cols-2 sm:gap-24"
+          >
+            <div
+              class="relative flex items-center justify-center gap-4 max-sm:order-1"
+            >
+              <img
+                src="./assets/images/services/service-4-1.png"
+                class="img1 z-10 max-h-[620px] w-full flex-1 rounded-3xl object-cover object-center"
+                alt=""
+              />
+              <img
+                src="./assets/images/services/service-4-2.png"
+                class="img2 z-10 max-h-[620px] w-full flex-1 rounded-3xl object-cover object-center -translate-y-5 sm:-translate-y-10"
+                alt=""
+              />
+              <div
+                class="absolute z-20 m-auto inline-flex h-24 w-24 items-center justify-center rounded-full bg-white sm:h-28 sm:w-28"
+              >
+                <img
+                  src="./assets/images/services/forklift-sm.png"
+                  class="img-sm h-20 w-20 sm:h-24 sm:w-24"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <header class="space-y-6 max-sm:order-2 sm:space-y-10">
+              <h2
+                class="title max-w-[22ch] text-2xl font-bold leading-relaxed sm:text-4xl"
+              >
+                Supply of Additional Parts
+              </h2>
+
+              <div class="text space-y-4 text-lg sm:space-y-6">
+                <p>
+                  We have a qualified team that can handle the installation
+                  process efficiently, according to industry standards and
+                  technical requirements.
+                </p>
+                <p>
+                  We provide comprehensive installation services for new
+                  forklifts and material-handling equipment.
+                </p>
+                <p>
+                  We ensure that the equipment is installed correctly, according
+                  to specifications and industry standards.
+                </p>
+                <p>
+                  We perform initial operation and testing to verify proper
+                  performance and safety.
+                </p>
+              </div>
+
+              <!-- <a
+                href="./service-single.html"
+                class="group inline-flex items-center justify-center rounded-full border border-black bg-black p-2 transition-colors duration-300 hover:bg-transparent"
+              >
+                <span
+                  class="px-4 py-1 font-bold text-white transition-colors duration-300 group-hover:text-black sm:text-lg"
+                  >Learn More</span
+                >
+                <span
+                  class="flex h-11 w-11 items-center justify-center rounded-full bg-white transition-colors duration-300 group-hover:bg-black"
+                >
+                  <svg
+                    class="h-5 w-5 fill-current text-black transition-colors duration-300 group-hover:text-white rtl:rotate-180"
+                  >
+                    <use
+                      href="./assets/images/icons/sprite.svg#btn-arrow-right-2"
+                    ></use>
+                  </svg>
+                </span>
+              </a> -->
+            </header>
+          </div>
+        </section>
+
+        <section class="service-2 wrapper">
+          <div
+            class="grid grid-cols-1 overflow-hidden rounded-3xl sm:grid-cols-2"
+          >
+            <!-- max-sm:rounded-3xl sm:p-20 ltr:sm:rounded-br-3xl ltr:sm:rounded-tr-3xl rtl:sm:rounded-bl-3xl rtl:sm:rounded-tl-3xl -->
+            <div
+              class="flex flex-col items-start justify-center space-y-7 bg-stone-900 p-8 text-white sm:px-16 sm:py-20"
+            >
+              <h2 class="title text-2xl font-bold sm:text-4xl">
+                Professional, Operational, and Technical Consulting
+              </h2>
+
+              <div class="text space-y-4 text-lg sm:space-y-6">
+                <p>
+                  We provide original and approved spare parts for forklifts and
+                  material handling equipment.
+                </p>
+                <p>
+                  We help customers identify and provide the right replacement
+                  parts for their equipment.
+                </p>
+                <p>
+                  We ensure the availability of critical spare parts to avoid
+                  equipment downtime and impact on productivity.
+                </p>
+              </div>
+
+              <!-- <a
+                href="./service-single.html"
+                class="bg-wborder-white group inline-flex items-center justify-center rounded-full border border-white p-2 transition-colors duration-300 hover:bg-white"
+              >
+                <span
+                  class="px-4 py-1 font-bold text-white transition-colors duration-300 group-hover:text-black sm:text-lg"
+                  >Learn More</span
+                >
+                <span
+                  class="flex h-11 w-11 items-center justify-center rounded-full bg-white transition-colors duration-300 group-hover:bg-black"
+                >
+                  <svg
+                    class="h-5 w-5 fill-current text-black transition-colors duration-300 group-hover:text-white rtl:rotate-180"
+                  >
+                    <use
+                      href="./assets/images/icons/sprite.svg#btn-arrow-right-2"
+                    ></use>
+                  </svg>
+                </span>
+              </a> -->
+            </div>
+
+            <img
+              src="./assets/images/services/service-5.png"
+              class="img h-full w-full object-cover object-center"
+              alt=""
+            />
+          </div>
+        </section>
+
+        <section
+          class="service-3 overflow-hidden bg-neutral-100 pt-10 sm:pt-14"
+        >
+          <div class="wrapper">
+            <div class="mb-20 grid grid-cols-1 sm:grid-cols-2">
+              <div>
+                <h2 class="title mb-12 text-4xl font-bold text-black">
+                  Supply of Additional Parts
+                </h2>
+
+                <!-- <a
+                  href="./service-single.html"
+                  class="group inline-flex items-center justify-center rounded-full border border-black bg-black p-2 transition-colors duration-300 hover:bg-transparent"
+                >
+                  <span
+                    class="px-4 py-1 font-bold text-white transition-colors duration-300 group-hover:text-black sm:text-lg"
+                    >Learn More</span
+                  >
+                  <span
+                    class="flex h-11 w-11 items-center justify-center rounded-full bg-white transition-colors duration-300 group-hover:bg-black"
+                  >
+                    <svg
+                      class="h-5 w-5 fill-current text-black transition-colors duration-300 group-hover:text-white rtl:rotate-180"
+                    >
+                      <use
+                        href="./assets/images/icons/sprite.svg#btn-arrow-right-2"
+                      ></use>
+                    </svg>
+                  </span>
+                </a> -->
+              </div>
+
+              <div class="text space-y-4 sm:text-lg">
+                <p>
+                  We provide additional parts, including safety tools, sensors,
+                  and other accessories, to keep equipment running efficiently.
+                </p>
+                <p>
+                  We help customers identify and provide the right safety tools
+                  and sensors for their equipment.
+                </p>
+                <p>
+                  We also help customers install and configure additional
+                  equipment on their forklifts and other material handling
+                  equipment.
+                </p>
+              </div>
+            </div>
+
+            <div class="relative overflow-hidden py-px">
+              <img
+                src="./assets/images/services/service-6.png"
+                class="w-full rounded-tl-3xl rounded-tr-3xl"
+                alt=""
+              />
+
+              <div
+                class="service-img-overlay absolute inset-0 h-full w-full origin-bottom bg-neutral-100"
+              ></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="service-1 wrapper">
+          <div
+            class="grid grid-cols-1 items-center gap-12 sm:grid-cols-2 sm:gap-24"
+          >
+            <header class="space-y-6 max-sm:order-2 sm:space-y-10">
+              <h2
+                class="title max-w-[22ch] text-2xl font-bold leading-relaxed sm:text-4xl"
+              >
+                Programming and Restoration
+              </h2>
+
+              <div class="text space-y-4 text-lg sm:space-y-6">
+                <p>We offer programming services for specialized equipment.</p>
+                <p>
+                  We identify different equipment failures through programs for
+                  forklift failures.
+                </p>
+                <p>We prepare and restore forklifts of all sizes and models.</p>
+              </div>
+
+              <!-- <a
+                href="./service-single.html"
+                class="group inline-flex items-center justify-center rounded-full border border-black bg-black p-2 transition-colors duration-300 hover:bg-transparent"
+              >
+                <span
+                  class="px-4 py-1 font-bold text-white transition-colors duration-300 group-hover:text-black sm:text-lg"
+                  >Learn More</span
+                >
+                <span
+                  class="flex h-11 w-11 items-center justify-center rounded-full bg-white transition-colors duration-300 group-hover:bg-black"
+                >
+                  <svg
+                    class="h-5 w-5 fill-current text-black transition-colors duration-300 group-hover:text-white rtl:rotate-180"
+                  >
+                    <use
+                      href="./assets/images/icons/sprite.svg#btn-arrow-right-2"
+                    ></use>
+                  </svg>
+                </span>
+              </a> -->
+            </header>
+
+            <div
+              class="relative flex items-center justify-center gap-4 max-sm:order-1"
+            >
+              <img
+                src="./assets/images/services/service-7-1.png"
+                class="img1 z-10 max-h-[620px] w-full flex-1 rounded-3xl object-cover object-center"
+                alt=""
+              />
+              <img
+                src="./assets/images/services/service-7-2.png"
+                class="img2 z-10 max-h-[620px] w-full flex-1 rounded-3xl object-cover object-center -translate-y-5 sm:-translate-y-10"
+                alt=""
+              />
+              <div
+                class="img-sm absolute z-20 m-auto inline-flex h-24 w-24 items-center justify-center rounded-full bg-white sm:h-28 sm:w-28"
+              >
+                <img
+                  src="./assets/images/services/forklift-sm.png"
+                  class="h-20 w-20 sm:h-24 sm:w-24"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="service-2 wrapper">
+          <div
+            class="grid grid-cols-1 overflow-hidden rounded-3xl sm:grid-cols-2"
+          >
+            <img
+              src="./assets/images/services/service-8.png"
+              class="img h-full w-full object-cover object-center"
+              alt=""
+            />
+
+            <!-- max-sm:rounded-3xl sm:p-20 ltr:sm:rounded-br-3xl ltr:sm:rounded-tr-3xl rtl:sm:rounded-bl-3xl rtl:sm:rounded-tl-3xl -->
+            <div
+              class="space-y-7 bg-stone-900 p-8 text-white sm:px-16 sm:py-20"
+            >
+              <h2 class="title text-2xl font-bold sm:text-4xl">
+                Forklift maintenance and repair contracts
+              </h2>
+
+              <div class="text space-y-4 text-lg sm:space-y-6">
+                <p>
+                  We provide thorough forklift maintenance, including fault
+                  inspection, correction, and preventive measures through
+                  flexible rental contracts. Our meticulous approach ensures
+                  accurate problem resolution and sustainable performance...
+                </p>
+              </div>
+
+              <!-- <a
+                href="./service-single.html"
+                class="bg-wborder-white group inline-flex items-center justify-center rounded-full border border-white p-2 transition-colors duration-300 hover:bg-white"
+              >
+                <span
+                  class="px-4 py-1 font-bold text-white transition-colors duration-300 group-hover:text-black sm:text-lg"
+                  >Learn More</span
+                >
+                <span
+                  class="flex h-11 w-11 items-center justify-center rounded-full bg-white transition-colors duration-300 group-hover:bg-black"
+                >
+                  <svg
+                    class="h-5 w-5 fill-current text-black transition-colors duration-300 group-hover:text-white rtl:rotate-180"
+                  >
+                    <use
+                      href="./assets/images/icons/sprite.svg#btn-arrow-right-2"
+                    ></use>
+                  </svg>
+                </span>
+              </a> -->
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="service-3 overflow-hidden bg-neutral-100 pb-20 pt-14 sm:pb-28 sm:pt-20"
+        >
+          <div class="wrapper">
+            <div class="mb-20 grid grid-cols-1 sm:grid-cols-2">
+              <div>
+                <h2 class="title mb-12 text-4xl font-bold text-black">
+                  Purchase of used Equipment
+                </h2>
+
+                <!-- <a
+                  href="./service-single.html"
+                  class="group inline-flex items-center justify-center rounded-full border border-black bg-black p-2 transition-colors duration-300 hover:bg-transparent"
+                >
+                  <span
+                    class="px-4 py-1 font-bold text-white transition-colors duration-300 group-hover:text-black sm:text-lg"
+                    >Learn More</span
+                  >
+                  <span
+                    class="flex h-11 w-11 items-center justify-center rounded-full bg-white transition-colors duration-300 group-hover:bg-black"
+                  >
+                    <svg
+                      class="h-5 w-5 fill-current text-black transition-colors duration-300 group-hover:text-white rtl:rotate-180"
+                    >
+                      <use
+                        href="./assets/images/icons/sprite.svg#btn-arrow-right-2"
+                      ></use>
+                    </svg>
+                  </span>
+                </a> -->
+              </div>
+
+              <div class="text space-y-4 sm:text-lg">
+                <p>We offer clients the best solutions for selling equipment</p>
+              </div>
+            </div>
+
+            <div class="relative overflow-hidden py-px">
+              <img
+                src="./assets/images/services/service-9.png"
+                class="w-full rounded-3xl"
+                alt=""
+              />
+
+              <div
+                class="service-img-overlay absolute inset-0 h-full w-full origin-bottom bg-neutral-100"
+              ></div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <section id="cta" class="bg-zinc-900">
+        <div
+          class="sm:before:clippy-top container relative mx-auto px-4 pt-12 sm:pt-36 sm:before:absolute sm:before:-top-px sm:before:start-4 sm:before:h-11 sm:before:w-[500px] sm:before:bg-white"
+        >
+          <div class="cta-wrapper flex flex-col items-start gap-12 sm:flex-row">
+            <div class="w-full max-lg:order-2 sm:w-1/2">
+              <img
+                src="./assets/images/home-cta.png"
+                class="cta-img block w-full"
+                alt=""
+              />
+            </div>
+
+            <div class="w-full max-lg:order-1 sm:w-1/2">
+              <h2
+                class="cta-title mb-6 text-4xl font-extrabold text-white sm:text-6xl sm:leading-[76px]"
+              >
+                Already to improve or repair ? Let’s Talk!
+              </h2>
+
+              <div
+                class="mb-12 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6"
+              >
+                <div class="cta-feature flex items-center">
+                  <svg
+                    class="me-2 inline-block h-6 w-6 fill-current text-red-600"
+                  >
+                    <use href="./assets/images/icons/sprite.svg#check"></use>
+                  </svg>
+                  <span class="text-lg leading-loose text-red-600 sm:text-xl"
+                    >Free Quotes</span
+                  >
+                </div>
+
+                <div class="cta-feature flex items-center">
+                  <svg
+                    class="me-2 inline-block h-6 w-6 fill-current text-red-600"
+                  >
+                    <use href="./assets/images/icons/sprite.svg#check"></use>
+                  </svg>
+                  <span class="text-lg leading-loose text-red-600 sm:text-xl"
+                    >100% Commitment-Free
+                  </span>
+                </div>
+              </div>
+
+              <a
+                href="#"
+                class="cta-link group inline-flex items-center justify-center rounded-full border border-red-600 bg-red-600 p-2 transition-colors hover:bg-transparent"
+              >
+                <span
+                  class="px-4 py-1 text-lg font-bold text-white transition-colors group-hover:text-red-600"
+                  >Call Us Now</span
+                >
+                <span
+                  class="flex h-11 w-11 items-center justify-center rounded-full border border-red-600 bg-white transition-colors group-hover:bg-transparent"
+                >
+                  <svg
+                    class="h-6 w-6 fill-current text-red-600 transition-colors group-hover:text-red-600"
+                  >
+                    <use href="./assets/images/icons/sprite.svg#phone"></use>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /cta -->
+
+      <footer id="footer">
+        <div class="section py-12 sm:py-24">
+          <div class="flex flex-col justify-between gap-10 sm:flex-row">
+            <div class="space-y-6">
+              <img src="./assets/images/logo-footer.png" class="w-24" alt="" />
+
+              <p class="max-w-md text-lg leading-7 text-zinc-900">
+                Home Pro is your premier destination for top-notch smart home
+                service and repair.
+              </p>
+
+              <ul class="flex gap-3">
+                <li>
+                  <a
+                    href="#"
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-stone-900 text-white transition-colors duration-200 hover:bg-red"
+                    ><svg class="h-5 w-5 fill-current">
+                      <use
+                        href="./assets/images/icons/sprite.svg#facebook-fill"
+                      ></use></svg
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-stone-900 text-white transition-colors duration-200 hover:bg-red"
+                    ><svg class="h-5 w-5 fill-current">
+                      <use
+                        href="./assets/images/icons/sprite.svg#linkedin-fill"
+                      ></use></svg
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-stone-900 text-white transition-colors duration-200 hover:bg-red"
+                    ><svg class="h-5 w-5 fill-current">
+                      <use
+                        href="./assets/images/icons/sprite.svg#twitter-fill"
+                      ></use></svg
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-stone-900 text-white transition-colors duration-200 hover:bg-red"
+                  >
+                    <svg class="h-5 w-5 fill-current">
+                      <use
+                        href="./assets/images/icons/sprite.svg#instagram-line"
+                      ></use></svg
+                  ></a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="max-w-[260px] space-y-4 sm:space-y-6">
+              <h4
+                class="text-xl font-bold leading-loose text-zinc-900 sm:text-2xl"
+              >
+                Company
+              </h4>
+
+              <ul class="flex flex-wrap gap-y-2 sm:gap-y-3">
+                <li class="basis-1/2">
+                  <a
+                    href="./index.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    Home
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./about.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    About us
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./services.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    Services
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./customers.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    Customers
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./team.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    Team
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./contact.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    Contacts
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./faq.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    FAQs
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <p
+          class="border-t border-white border-opacity-30 py-8 text-center text-lg text-zinc-950"
+        >
+          &copy;2023 Stars . All rights reserved
+        </p>
+      </footer>
+    </div>
+    <!-- /app -->
+  </body>
+</html>

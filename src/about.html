@@ -1,0 +1,963 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <title>Stars</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./assets/styles/styles.css" />
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/preline@2.0.2/dist/preline.min.js"
+    ></script>
+    <script defer src="./assets/scripts/main.js"></script>
+
+    <script defer src="./assets/scripts/about.js"></script>
+  </head>
+
+  <body>
+    <div
+      id="preloader"
+      class="fixed inset-0 isolate z-50 flex h-full w-full items-center justify-center bg-zinc-800"
+    >
+      <img
+        src="./assets/images/icons/sparkle-outline.png"
+        class="star star-outline absolute z-20 m-auto h-56 opacity-0 rotate-45 scale-0 sm:h-3/5"
+        alt=""
+      />
+      <img
+        src="./assets/images/icons/sparkle.png"
+        class="star star-solid absolute z-20 m-auto h-56 opacity-0 rotate-45 scale-0 sm:h-3/5"
+        alt=""
+      />
+
+      <div
+        class="bg-overlay absolute inset-0 z-10 m-auto aspect-square w-full rounded-full bg-zinc-900 scale-0"
+      ></div>
+    </div>
+    <!-- /preloader -->
+
+    <div id="menu" class="menu" data-lenis-prevent>
+      <div class="navbar wrapper">
+        <img src="./assets/images/logo.png" class="navbar__logo" alt="" />
+
+        <button
+          type="button"
+          class="navbar__btn"
+          aria-label="open menu"
+          onclick="closeMenu()"
+        >
+          <img
+            class="mx-auto w-12"
+            src="./assets/images/icons/men-x.svg"
+            alt=""
+          />
+        </button>
+      </div>
+
+      <nav class="menu__nav wrapper">
+        <ul class="menu__nav-list">
+          <li>
+            <a href="./index.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="./about.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">About</span>
+            </a>
+          </li>
+          <li>
+            <a href="./services.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">Services</span>
+            </a>
+          </li>
+          <li>
+            <a href="./customers.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">Customers</span>
+            </a>
+          </li>
+          <li>
+            <a href="./team.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">Team</span>
+            </a>
+          </li>
+          <li>
+            <a href="./contact.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">Contact</span>
+            </a>
+          </li>
+          <li>
+            <a href="./faq.html" class="menu__link group">
+              <img
+                src="./assets/images/icons/arrow-star.svg"
+                class="menu__link-icon"
+                alt=""
+              />
+
+              <span class="menu__link-text">FAQs</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- /menu -->
+
+    <div id="app">
+      <header class="header">
+        <div class="wrapper">
+          <div class="navbar">
+            <img src="./assets/images/logo.png" class="navbar__logo" alt="" />
+
+            <button
+              id="navBarBtn"
+              type="button"
+              class="navbar__btn"
+              aria-label="open menu"
+              onclick="openMenu()"
+            >
+              <img
+                class="navbar__btn-icon"
+                src="./assets/images/icons/menu.svg"
+                alt=""
+              />
+              <img
+                id="navBarBtnSparkle"
+                src="./assets/images/icons/sparkle.png"
+                class="navbar__btn-sparkle"
+                alt=""
+              />
+            </button>
+          </div>
+
+          <div class="header__hero">
+            <hgroup>
+              <p class="header__subtitle">About Stars</p>
+              <h1 class="header__title">
+                Forklift and Material Handling Equipment (MHE)
+              </h1>
+            </hgroup>
+
+            <div>
+              <img
+                src="./assets/images/about/hero-img.png"
+                class="header__img"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- /header -->
+
+      <main class="space-y-40 py-24 sm:py-48">
+        <section id="mission" class="wrapper">
+          <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-16">
+            <img
+              src="./assets/images/about/mission.png"
+              class="img relative z-20 drop-shadow-xl"
+              alt=""
+            />
+
+            <div class="content mx-auto max-w-[445px]">
+              <div class="mb-8">
+                <h2
+                  class="text-xl font-medium uppercase leading-10 text-red-600 sm:text-3xl"
+                >
+                  our Mission
+                </h2>
+                <span class="mt-2 inline-block h-0.5 w-14 bg-red-600"></span>
+              </div>
+
+              <p class="mb-8 text-lg leading-10 sm:mb-10 sm:text-xl">
+                To be the leading provider of forklift and Material Handling
+                Equipment (MHE) solutions, setting the industry standard for
+                excellence and innovation.
+              </p>
+
+              <a
+                href="./service-single.html"
+                class="group inline-flex items-center justify-center rounded-full"
+              >
+                <span
+                  class="me-3 font-bold text-black transition-colors duration-300 group-hover:text-black sm:text-lg"
+                  >Learn More</span
+                >
+                <span
+                  class="flex h-10 w-10 items-center justify-center rounded-full border border-black bg-white transition-colors duration-300 group-hover:bg-black"
+                >
+                  <svg
+                    class="h-6 w-6 fill-current text-black transition-colors duration-300 group-hover:text-white rtl:rotate-180"
+                  >
+                    <use
+                      href="./assets/images/icons/sprite.svg#btn-arrow-right"
+                    ></use>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="mission-box relative z-10 mt-5 flex justify-end rounded-3xl bg-stone-800 p-8 sm:-mt-32 sm:ms-4 sm:p-12 ltr:sm:rounded-bl-[11rem_16rem] rtl:sm:rounded-br-[11rem_16rem] rtl:sm:rounded-tr-none"
+          >
+            <p
+              class="text-lg text-white sm:w-1/2 sm:ps-10 sm:text-xl sm:leading-loose"
+            >
+              Specializing in forklift and Material Handling Equipment (MHE)
+              rentals, we offer diverse, modern models, and sizes. Our
+              experienced team provides high-quality maintenance, specialized
+              repairs,to ensure smooth operations٫.
+            </p>
+          </div>
+        </section>
+
+        <section id="vision" class="wrapper">
+          <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-16">
+            <div class="content mx-auto max-w-[445px]">
+              <div class="mb-8">
+                <h2
+                  class="text-xl font-medium uppercase leading-10 text-red-600 sm:text-3xl"
+                >
+                  our Vision
+                </h2>
+                <span class="mt-2 inline-block h-0.5 w-14 bg-red-600"></span>
+              </div>
+
+              <p class="mb-8 text-lg leading-10 sm:mb-10 sm:text-xl">
+                To be the leading provider of forklift and Material Handling
+                Equipment (MHE) solutions, setting the industry standard for
+                excellence and innovation.
+              </p>
+
+              <a
+                href="./service-single.html"
+                class="group inline-flex items-center justify-center rounded-full"
+              >
+                <span
+                  class="me-3 font-bold text-black transition-colors duration-300 group-hover:text-black sm:text-lg"
+                  >Learn More</span
+                >
+                <span
+                  class="flex h-10 w-10 items-center justify-center rounded-full border border-black bg-white transition-colors duration-300 group-hover:bg-black"
+                >
+                  <svg
+                    class="h-6 w-6 fill-current text-black transition-colors duration-300 group-hover:text-white rtl:rotate-180"
+                  >
+                    <use
+                      href="./assets/images/icons/sprite.svg#btn-arrow-right"
+                    ></use>
+                  </svg>
+                </span>
+              </a>
+            </div>
+
+            <img
+              src="./assets/images/about/vision.png"
+              class="img relative z-20 drop-shadow-xl"
+              alt=""
+            />
+          </div>
+
+          <div
+            class="vision-box relative z-10 mt-5 flex justify-end rounded-3xl bg-stone-800 p-8 sm:-mt-32 sm:me-4 sm:p-12 ltr:sm:rounded-br-[11rem_16rem] rtl:sm:rounded-br-[11rem_16rem] rtl:sm:rounded-tr-none"
+          >
+            <p
+              class="me-auto text-lg text-white sm:w-1/2 sm:ps-10 sm:text-xl sm:leading-loose"
+            >
+              Decarbonization requires balance between legacy systems and
+              emerging technologies. Between the environment and business
+              economies.
+            </p>
+          </div>
+        </section>
+
+        <section id="story" class="wrapper">
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-5 sm:gap-12">
+            <div class="sm:col-span-3">
+              <div class="flex gap-6 max-sm:items-center">
+                <div class="flex-1">
+                  <div class="title mb-8">
+                    <h2
+                      class="text-xl font-medium uppercase leading-10 text-red-600 sm:text-2xl"
+                    >
+                      Stars Story
+                    </h2>
+                    <span
+                      class="mt-2 inline-block h-0.5 w-14 bg-red-600"
+                    ></span>
+                  </div>
+
+                  <div class="tabs-content">
+                    <div
+                      id="tab-1"
+                      role="tabpanel"
+                      class="active"
+                      aria-labelledby="tab-item-1"
+                    >
+                      <h2
+                        class="mb-4 flex items-center gap-2 text-2xl font-semibold sm:text-3xl"
+                      >
+                        <img
+                          src="./assets/images/icons/sparkle-red.png"
+                          class="h-6 w-6"
+                          alt=""
+                        />
+                        2020
+                      </h2>
+                      <p
+                        class="max-w-[35ch] ps-8 text-lg text-black text-opacity-60 sm:text-xl sm:leading-9"
+                      >
+                        In 2020, our company was founded with great aspirations
+                        and ambitions, fueled by a passion for providing
+                        exceptional forklift and Material Handling Equipment
+                        (MHE) solutions, we embarked on a journey to transform
+                        the industry, with a dedicated team of industry experts,
+                        we set out to establish ourselves as a trusted name in
+                        the market.
+                      </p>
+                    </div>
+                    <div
+                      id="tab-2"
+                      class="hidden"
+                      role="tabpanel"
+                      aria-labelledby="tab-item-2"
+                    >
+                      <h2
+                        class="mb-4 flex items-center gap-2 text-2xl font-semibold sm:text-3xl"
+                      >
+                        <img
+                          src="./assets/images/icons/sparkle-red.png"
+                          class="h-6 w-6"
+                          alt=""
+                        />
+                        2021
+                      </h2>
+                      <p
+                        class="mb-2 max-w-[35ch] ps-8 text-lg text-black text-opacity-60 sm:text-xl sm:leading-9"
+                      >
+                        This year marked an important milestone for our company.
+                        Building upon the foundation laid in the previous year,
+                        we focused on introducing new and advanced machinery
+                        into our product portfolio.
+                      </p>
+                      <p
+                        class="max-w-[35ch] ps-8 text-lg text-black text-opacity-60 sm:text-xl sm:leading-9"
+                      >
+                        By forging strategic partnerships with renowned
+                        manufacturers, we ensured that our customers had access
+                        to the latest technology and innovative solutions for
+                        their material handling needs.
+                      </p>
+                    </div>
+                    <div
+                      id="tab-3"
+                      class="hidden"
+                      role="tabpanel"
+                      aria-labelledby="tab-item-3"
+                    >
+                      <h2
+                        class="mb-4 flex items-center gap-2 text-2xl font-semibold sm:text-3xl"
+                      >
+                        <img
+                          src="./assets/images/icons/sparkle-red.png"
+                          class="h-6 w-6"
+                          alt=""
+                        />
+                        2022
+                      </h2>
+                      <p
+                        class="mb-2 max-w-[35ch] ps-8 text-lg text-black text-opacity-60 sm:text-xl sm:leading-9"
+                      >
+                        Continuing our commitment to excellence, the year 2022
+                        witnessed significant growth and expansion; we expanded
+                        our reach and diversified our customer base, serving
+                        businesses of all sizes and industries.
+                      </p>
+                      <p
+                        class="max-w-[35ch] ps-8 text-lg text-black text-opacity-60 sm:text-xl sm:leading-9"
+                      >
+                        Through a customer-centric approach, we deepened our
+                        understanding of their unique requirements and provided
+                        tailored solutions to optimize their material handling
+                        operations.
+                      </p>
+                    </div>
+                    <div
+                      id="tab-4"
+                      class="hidden"
+                      role="tabpanel"
+                      aria-labelledby="tab-item-4"
+                    >
+                      <h2
+                        class="mb-4 flex items-center gap-2 text-2xl font-semibold sm:text-3xl"
+                      >
+                        <img
+                          src="./assets/images/icons/sparkle-red.png"
+                          class="h-6 w-6"
+                          alt=""
+                        />
+                        2023
+                      </h2>
+                      <p
+                        class="mb-2 max-w-[35ch] ps-8 text-lg text-black text-opacity-60 sm:text-xl sm:leading-9"
+                      >
+                        As we progress into 2023, our company remains dedicated
+                        to redefining the standards of the industry, with a
+                        focus on continuous improvement and innovation, we
+                        strive to stay ahead of the curve.
+                      </p>
+                      <p
+                        class="max-w-[35ch] ps-8 text-lg text-black text-opacity-60 sm:text-xl sm:leading-9"
+                      >
+                        By investing in research and development and leveraging
+                        emerging technologies, we ensure that our customers
+                        benefit from the most advanced and efficient forklift
+                        and MHE solutions available.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <nav
+                  class="tabs flex flex-col gap-10 sm:gap-y-20"
+                  aria-label="Tabs"
+                  role="tablist"
+                >
+                  <button
+                    type="button"
+                    id="tab-item-1"
+                    class="active inline-flex items-center font-semibold opacity-80 hs-tab-active:text-red hs-tab-active:opacity-100"
+                    data-hs-tab="#tab-1"
+                    aria-controls="tab-1"
+                    role="tab"
+                  >
+                    <img
+                      src="./assets/images/icons/sparkle-red.png"
+                      class="me-2 h-5 w-5 grayscale hs-tab-active:grayscale-0"
+                      alt=""
+                    />
+                    2020
+                  </button>
+                  <button
+                    type="button"
+                    id="tab-item-2"
+                    class="inline-flex items-center font-semibold opacity-80 hs-tab-active:text-red hs-tab-active:opacity-100"
+                    data-hs-tab="#tab-2"
+                    aria-controls="tab-2"
+                    role="tab"
+                  >
+                    <img
+                      src="./assets/images/icons/sparkle-red.png"
+                      class="me-2 h-5 w-5 grayscale hs-tab-active:grayscale-0"
+                      alt=""
+                    />
+                    2021
+                  </button>
+                  <button
+                    type="button"
+                    id="tab-item-3"
+                    class="inline-flex items-center font-semibold opacity-80 hs-tab-active:text-red hs-tab-active:opacity-100"
+                    data-hs-tab="#tab-3"
+                    aria-controls="tab-3"
+                    role="tab"
+                  >
+                    <img
+                      src="./assets/images/icons/sparkle-red.png"
+                      class="me-2 h-5 w-5 grayscale hs-tab-active:grayscale-0"
+                      alt=""
+                    />
+                    2022
+                  </button>
+                  <button
+                    type="button"
+                    id="tab-item-4"
+                    class="inline-flex items-center font-semibold opacity-80 hs-tab-active:text-red hs-tab-active:opacity-100"
+                    data-hs-tab="#tab-4"
+                    aria-controls="tab-4"
+                    role="tab"
+                  >
+                    <img
+                      src="./assets/images/icons/sparkle-red.png"
+                      class="me-2 h-5 w-5 grayscale hs-tab-active:grayscale-0"
+                      alt=""
+                    />
+                    2023
+                  </button>
+                </nav>
+              </div>
+            </div>
+
+            <div class="sm:col-span-2">
+              <img
+                src="./assets/images/about/carrier.png"
+                class="img w-full"
+                alt=""
+              />
+            </div>
+          </div>
+        </section>
+
+        <section id="experts">
+          <div class="wrapper">
+            <header
+              class="mb-16 grid grid-cols-1 gap-10 sm:grid-cols-5 sm:gap-16"
+            >
+              <div class="title sm:col-span-2">
+                <h2
+                  class="text-xl font-medium uppercase leading-10 text-white sm:text-2xl"
+                >
+                  Meet Our experts
+                </h2>
+                <span class="mt-2 inline-block h-0.5 w-14 bg-white"></span>
+              </div>
+
+              <div class="sm:col-span-3">
+                <div class="space-y-6">
+                  <p
+                    class="text-lg text-white text-opacity-60 sm:text-2xl sm:leading-relaxed"
+                  >
+                    At Stars Forklift, our dedicated team of experienced
+                    professionals is committed to delivering exceptional
+                    customer service through unwavering professionalism and a
+                    shared passion for excellence, ensuring the highest level of
+                    support for each customer.
+                  </p>
+                </div>
+              </div>
+            </header>
+
+            <div class="swiper sm:-mt-32 sm:pt-40">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide group">
+                  <div class="expert">
+                    <img
+                      src="./assets/images/team/member-1.png"
+                      class="expert__avatar"
+                      alt=""
+                    />
+
+                    <div class="expert__info">
+                      <h3>Emad El-Din</h3>
+                      <p>First Sales Supervisor</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide group">
+                  <div class="expert">
+                    <img
+                      src="./assets/images/team/member-2.png"
+                      class="expert__avatar"
+                      alt=""
+                    />
+
+                    <div class="expert__info">
+                      <h3>Emad El-Din</h3>
+                      <p>First Sales Supervisor</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide group">
+                  <div class="expert">
+                    <img
+                      src="./assets/images/team/member-3.png"
+                      class="expert__avatar"
+                      alt=""
+                    />
+
+                    <div class="expert__info">
+                      <h3>Emad El-Din</h3>
+                      <p>First Sales Supervisor</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide group">
+                  <div class="expert">
+                    <img
+                      src="./assets/images/team/member-2.png"
+                      class="expert__avatar"
+                      alt=""
+                    />
+
+                    <div class="expert__info">
+                      <h3>Emad El-Din</h3>
+                      <p>First Sales Supervisor</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="statistics" class="wrapper">
+          <div class="mb-20 grid grid-cols-1 items-center sm:grid-cols-2">
+            <div class="flex justify-end">
+              <img
+                src="./assets/images/about/forklift.png"
+                class="statistics-img flex-shrink-0 sm:w-[715px] sm:max-w-none"
+                alt=""
+              />
+            </div>
+
+            <div>
+              <div class="title mx-auto max-w-lg">
+                <p
+                  class="text-2xl font-medium uppercase leading-relaxed sm:text-4xl sm:leading-[54px]"
+                >
+                  Our Track Record IN forklift rental services, as well as
+                  manual (MHE).
+                </p>
+                <span class="mt-2 inline-block h-0.5 w-14 bg-black"></span>
+              </div>
+            </div>
+          </div>
+
+          <header class="services-title mx-auto mb-7 w-fit sm:mb-12">
+            <h2
+              class="text-2xl font-medium uppercase leading-10 text-red-600 sm:text-3xl"
+            >
+              our FACTS
+            </h2>
+            <span class="mt-2 inline-block h-0.5 w-14 bg-red-600"></span>
+          </header>
+          <div
+            class="statistics-wrapper flex flex-wrap items-center justify-between gap-y-8 text-center sm:gap-x-4"
+          >
+            <div class="max-sm:w-1/2">
+              <p
+                class="statistics-number mb-2 text-5xl font-bold leading-none text-black sm:text-7xl"
+              >
+                18
+              </p>
+              <p
+                class="statistics-text font-bold leading-7 tracking-tight text-neutral-400"
+              >
+                Years Of Experience
+              </p>
+            </div>
+            <div class="max-sm:w-1/2">
+              <p
+                class="statistics-number mb-2 text-5xl font-bold leading-none text-black sm:text-7xl"
+              >
+                62
+              </p>
+              <p
+                class="statistics-text font-bold leading-7 tracking-tight text-neutral-400"
+              >
+                Expert Partners
+              </p>
+            </div>
+            <div class="max-sm:w-1/2">
+              <p
+                class="statistics-number mb-2 text-5xl font-bold leading-none text-black sm:text-7xl"
+              >
+                164
+              </p>
+              <p
+                class="statistics-text font-bold leading-7 tracking-tight text-neutral-400"
+              >
+                Happy Customers
+              </p>
+            </div>
+            <div class="max-sm:w-1/2">
+              <p
+                class="statistics-number mb-2 text-5xl font-bold leading-none text-black sm:text-7xl"
+              >
+                26
+              </p>
+              <p
+                class="statistics-text font-bold leading-7 tracking-tight text-neutral-400"
+              >
+                Active Projects
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <section id="cta" class="bg-zinc-900">
+        <div
+          class="sm:before:clippy-top container relative mx-auto px-4 pt-12 sm:pt-36 sm:before:absolute sm:before:-top-px sm:before:start-4 sm:before:h-11 sm:before:w-[500px] sm:before:bg-white"
+        >
+          <div class="cta-wrapper flex flex-col items-start gap-12 sm:flex-row">
+            <div class="w-full max-lg:order-2 sm:w-1/2">
+              <img
+                src="./assets/images/home-cta.png"
+                class="cta-img block w-full"
+                alt=""
+              />
+            </div>
+
+            <div class="w-full max-lg:order-1 sm:w-1/2">
+              <h2
+                class="cta-title mb-6 text-4xl font-extrabold text-white sm:text-6xl sm:leading-[76px]"
+              >
+                Already to improve or repair ? Let’s Talk!
+              </h2>
+
+              <div
+                class="mb-12 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6"
+              >
+                <div class="cta-feature flex items-center">
+                  <svg
+                    class="me-2 inline-block h-6 w-6 fill-current text-red-600"
+                  >
+                    <use href="./assets/images/icons/sprite.svg#check"></use>
+                  </svg>
+                  <span class="text-lg leading-loose text-red-600 sm:text-xl"
+                    >Free Quotes</span
+                  >
+                </div>
+
+                <div class="cta-feature flex items-center">
+                  <svg
+                    class="me-2 inline-block h-6 w-6 fill-current text-red-600"
+                  >
+                    <use href="./assets/images/icons/sprite.svg#check"></use>
+                  </svg>
+                  <span class="text-lg leading-loose text-red-600 sm:text-xl"
+                    >100% Commitment-Free
+                  </span>
+                </div>
+              </div>
+
+              <a
+                href="#"
+                class="cta-link group inline-flex items-center justify-center rounded-full border border-red-600 bg-red-600 p-2 transition-colors hover:bg-transparent"
+              >
+                <span
+                  class="px-4 py-1 text-lg font-bold text-white transition-colors group-hover:text-red-600"
+                  >Call Us Now</span
+                >
+                <span
+                  class="flex h-11 w-11 items-center justify-center rounded-full border border-red-600 bg-white transition-colors group-hover:bg-transparent"
+                >
+                  <svg
+                    class="h-6 w-6 fill-current text-red-600 transition-colors group-hover:text-red-600"
+                  >
+                    <use href="./assets/images/icons/sprite.svg#phone"></use>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /cta -->
+
+      <footer id="footer">
+        <div class="section py-12 sm:py-24">
+          <div class="flex flex-col justify-between gap-10 sm:flex-row">
+            <div class="space-y-6">
+              <img src="./assets/images/logo-footer.png" class="w-24" alt="" />
+
+              <p class="max-w-md text-lg leading-7 text-zinc-900">
+                Home Pro is your premier destination for top-notch smart home
+                service and repair.
+              </p>
+
+              <ul class="flex gap-3">
+                <li>
+                  <a
+                    href="#"
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-stone-900 text-white transition-colors duration-200 hover:bg-red"
+                    ><svg class="h-5 w-5 fill-current">
+                      <use
+                        href="./assets/images/icons/sprite.svg#facebook-fill"
+                      ></use></svg
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-stone-900 text-white transition-colors duration-200 hover:bg-red"
+                    ><svg class="h-5 w-5 fill-current">
+                      <use
+                        href="./assets/images/icons/sprite.svg#linkedin-fill"
+                      ></use></svg
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-stone-900 text-white transition-colors duration-200 hover:bg-red"
+                    ><svg class="h-5 w-5 fill-current">
+                      <use
+                        href="./assets/images/icons/sprite.svg#twitter-fill"
+                      ></use></svg
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-stone-900 text-white transition-colors duration-200 hover:bg-red"
+                  >
+                    <svg class="h-5 w-5 fill-current">
+                      <use
+                        href="./assets/images/icons/sprite.svg#instagram-line"
+                      ></use></svg
+                  ></a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="max-w-[260px] space-y-4 sm:space-y-6">
+              <h4
+                class="text-xl font-bold leading-loose text-zinc-900 sm:text-2xl"
+              >
+                Company
+              </h4>
+
+              <ul class="flex flex-wrap gap-y-2 sm:gap-y-3">
+                <li class="basis-1/2">
+                  <a
+                    href="./index.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    Home
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./about.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    About us
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./services.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    Services
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./customers.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    Customers
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./team.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    Team
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./contact.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    Contacts
+                  </a>
+                </li>
+                <li class="basis-1/2">
+                  <a
+                    href="./faq.html"
+                    class="text-lg leading-loose text-zinc-900 sm:text-xl"
+                  >
+                    FAQs
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <p
+          class="border-t border-white border-opacity-30 py-8 text-center text-lg text-zinc-950"
+        >
+          &copy;2023 Stars . All rights reserved
+        </p>
+      </footer>
+    </div>
+    <!-- /app -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper("#experts .swiper", {
+        loop: true,
+        autoplay: {
+          duration: 4000,
+        },
+
+        slidesPerView: 1,
+        spaceBetween: 10,
+        breakpoints: {
+          640: {
+            slidesPerView: 3,
+            spaceBetween: 80,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
